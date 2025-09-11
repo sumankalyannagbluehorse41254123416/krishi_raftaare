@@ -1,5 +1,4 @@
 "use client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { useEffect } from "react";
@@ -14,13 +13,15 @@ export default function HeroSlider() {
   useEffect(() => {
     // Add custom pagination bullet styles
     const observer = new MutationObserver(() => {
-      document.querySelectorAll(".swiper-pagination-bullet").forEach((bullet) => {
-        if (bullet.classList.contains("swiper-pagination-bullet-active")) {
-          bullet.classList.add("!bg-green-500", "!opacity-100");
-        } else {
-          bullet.classList.remove("!bg-green-500", "!opacity-100");
-        }
-      });
+      document
+        .querySelectorAll(".swiper-pagination-bullet")
+        .forEach((bullet) => {
+          if (bullet.classList.contains("swiper-pagination-bullet-active")) {
+            bullet.classList.add("!bg-green-500", "!opacity-100");
+          } else {
+            bullet.classList.remove("!bg-green-500", "!opacity-100");
+          }
+        });
     });
 
     const paginationEl = document.querySelector(".swiper-pagination");
@@ -32,7 +33,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[80vh] w-full overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
@@ -48,28 +49,25 @@ export default function HeroSlider() {
         navigation={{ nextEl: ".arrow-next", prevEl: ".arrow-prev" }}
         className="heroSwiper h-full w-full"
         onSlideChangeTransitionStart={(swiper) => {
-          // Reset zoom for all slides
           swiper.slides.forEach((slide) => {
-            const image = slide.querySelector('.slide-image');
+            const image = slide.querySelector(".slide-image");
             if (image) {
-              image.style.transform = 'scale(1.1)';
+              image.style.transform = "scale(1.1)";
             }
           });
         }}
         onSlideChangeTransitionEnd={(swiper) => {
-          // Apply zoom to active slide
           const activeSlide = swiper.slides[swiper.activeIndex];
-          const image = activeSlide.querySelector('.slide-image');
+          const image = activeSlide.querySelector(".slide-image");
           if (image) {
-            image.style.transform = 'scale(1)';
+            image.style.transform = "scale(1)";
           }
         }}
         onInit={(swiper) => {
-          // Add zoom effect to active slide
           const activeSlide = swiper.slides[swiper.activeIndex];
-          const image = activeSlide.querySelector('.slide-image');
+          const image = activeSlide.querySelector(".slide-image");
           if (image) {
-            image.style.transform = 'scale(1)';
+            image.style.transform = "scale(1)";
           }
         }}
       >
@@ -79,10 +77,12 @@ export default function HeroSlider() {
             <img
               src="/image/photo-1500937386664-56d1dfef3854 (1).avif"
               alt="Farm Field"
-              className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700 "
+              className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700"
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 "></div>
-            <div className="relative z-10 text-center text-white max-w-4xl px-5">
+            {/* Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+            {/* Text */}
+            <div className="relative z-20 text-center text-white max-w-4xl px-5">
               <span className="text-lg md:text-xl font-medium tracking-widest uppercase block mb-4">
                 WE'RE PRODUCING NATURAL GOODS
               </span>
@@ -109,10 +109,12 @@ export default function HeroSlider() {
             <img
               src="/image/photo-1500937386664-56d1dfef3854 (1).avif"
               alt="Harvest"
-              className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700 z-10"
+              className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700"
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
-            <div className="relative z-10 text-center text-white max-w-4xl px-5">
+            {/* Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+            {/* Text */}
+            <div className="relative z-20 text-center text-white max-w-4xl px-5">
               <span className="text-lg md:text-xl font-medium tracking-widest text-gray-200 uppercase block mb-4">
                 FRESH FROM OUR FARM
               </span>
@@ -139,10 +141,12 @@ export default function HeroSlider() {
             <img
               src="/image/photo-1500937386664-56d1dfef3854 (1).avif"
               alt="Farmers"
-              className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700 z-10"
+              className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700"
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
-            <div className="relative z-10 text-center text-white max-w-4xl px-5">
+            {/* Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+            {/* Text */}
+            <div className="relative z-20 text-center text-white max-w-4xl px-5">
               <span className="text-lg md:text-xl font-medium tracking-widest text-gray-200 uppercase block mb-4">
                 MEET OUR DEDICATED TEAM
               </span>
@@ -163,18 +167,28 @@ export default function HeroSlider() {
           </div>
         </SwiperSlide>
       </Swiper>
-
       {/* Pagination */}
-      <div className="swiper-pagination !bottom-8"></div>
+<div className="swiper-pagination   md:!bottom-8"></div>
 
       {/* Navigation Arrows */}
-      <div className="absolute right-5 bottom-5 z-10 flex flex-col space-y-4">
-        <div className="arrow-prev w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white text-xl cursor-pointer transition-all duration-300 backdrop-blur-sm border border-white border-opacity-10 hover:bg-green-500 hover:-translate-x-1">
+      <div className="absolute right-5 bottom-5 z-30 flex flex-col space-y-4  hidden sm:block">
+        {/* Prev Button */}
+        <button
+          className="arrow-prev w-12 h-12 rounded-full flex items-center justify-center cursor-pointer 
+               transition-transform duration-300 bg-white/20 backdrop-blur-sm border border-white/10 
+               hover:bg-primary hover:-translate-x-1 text-white text-lg"
+        >
           <i className="fas fa-arrow-left"></i>
-        </div>
-        <div className="arrow-next w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white text-xl cursor-pointer transition-all duration-300 backdrop-blur-sm border border-white border-opacity-10 hover:bg-green-500 hover:translate-x-1">
+        </button>
+
+        {/* Next Button */}
+        <button
+          className="arrow-next w-12 h-12 rounded-full flex items-center justify-center cursor-pointer 
+               transition-transform duration-300 bg-white/20 backdrop-blur-sm border border-white/10 
+               hover:bg-primary hover:translate-x-1 text-white text-lg"
+        >
           <i className="fas fa-arrow-right"></i>
-        </div>
+        </button>
       </div>
     </section>
   );

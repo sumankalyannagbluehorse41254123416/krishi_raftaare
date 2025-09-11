@@ -3,6 +3,35 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 
+* {
+  box-sizing: border-box;
+
+
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--agriox-font-2, "Averia Sans Libre", cursive);
+}
+
+.bg-white{
+  background-color: var(--color-white);
+}
+
+
+/* Custom container to control max-width */
 .container {
   width: 100%;
   padding-left: 1rem;
@@ -11,18 +40,19 @@
   margin-right: auto;
 }
 
-@media (min-width: 768px) {
+@media(min-width:768px) {
   .container {
     max-width: 760px;
   }
 }
 
-@media (min-width: 1024px) {
+@media(min-width:1024px) {
   .container {
     max-width: 960px;
   }
 }
-@media (min-width: 1280px) {
+
+@media(min-width:1280px) {
   .container {
     max-width: 1200px;
   }
@@ -33,14 +63,17 @@
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
 }
+
 .mobile-menu.open {
   transform: translateX(0);
 }
+
 .overlay {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out;
 }
+
 .overlay.open {
   opacity: 1;
   visibility: visible;
@@ -50,15 +83,29 @@
 .swiper-slide-active .slide-image {
   transform: scale(1);
 }
+
 .slide-image {
   transform: scale(1.1);
   transition: transform 10s ease-out;
 }
 
+.hero_bottom_img::before {
+  content: "";
+  width: 10000px;
+  height: 100%;
+  position: absolute;
+  right: 50%;
+  top: -215px;
+  background-color: #f6f4ec;
+}
+
+
+/* about section style */
 
 .about_img {
   position: relative;
 }
+
 .about_img::before {
   position: absolute;
   background-color: green;
@@ -82,15 +129,7 @@
   content: "";
 }
 
-.hero_bottom_img::before {
-  content: "";
-  width: 10000px;
-  height: 100%;
-  position: absolute;
-  right: 50%;
-  top: -215px;
-  background-color: #f6f4ec;
-}
+
 
 .agricultural_img::before {
   content: "";
@@ -103,6 +142,7 @@
   top: -21px;
   left: 175px;
 }
+
 .agricultural_img::after {
   content: "";
   position: absolute;
@@ -114,6 +154,7 @@
   top: -28px;
   left: 207px;
 }
+
 .hero_bottom_video::before {
   content: "";
   position: absolute;
@@ -123,6 +164,7 @@
   opacity: 0.4;
   border-radius: 8px;
 }
+
 .hero_bottom_video::after {
   content: "";
   width: 28px;
@@ -133,6 +175,7 @@
   top: 0;
   border-radius: 10px;
 }
+
 .agriculture_matters::before {
   content: "";
   position: absolute;
@@ -148,6 +191,7 @@
   background: #adb7ae;
   opacity: 0.8;
 }
+
 .project .swiper-pagination {
   display: flex;
   justify-content: center;
@@ -165,14 +209,17 @@
   align-items: center;
   justify-content: center;
 }
+
 .project .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: 20px;
   font-weight: bold;
 }
+
 .projectSwiper {
   padding-bottom: 50px;
 }
+
 .project .swiper-pagination-bullet-active {
   background-color: rgb(35, 80, 35) !important;
   width: 15px;
