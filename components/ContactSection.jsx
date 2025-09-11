@@ -6,7 +6,7 @@ export default function ContactSection() {
       <div className="mx-auto p-6 max-w-5xl">
         <div className="text-center">
           <h5 className="text-sm mb-2">CONTACT WITH US</h5>
-          <h1 className="text-3xl md:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto">
             Looking for Agriculture & Organic Eco Services?
           </h1>
         </div>
@@ -27,7 +27,7 @@ export default function ContactSection() {
                 <img
                   src="image/planting.jpg"
                   alt="Agriculture"
-                  className="rounded-lg shadow-md h-28 lg:h-40 w-22 lg:w-40 object-cover"
+                  className="rounded-lg shadow-md h-28 lg:h-40 w-32 lg:w-40 object-cover"
                 />
               </div>
               <img
@@ -44,16 +44,16 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full p-3 mb-4 border-none rounded-[10px]"
+                className="w-full p-3 mb-4 border-none rounded-[10px] bg-white"
               />
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full p-3 mb-4 border-none rounded-[10px]"
+                className="w-full p-3 mb-4 border-none rounded-[10px] bg-white"
               />
               <textarea
                 placeholder="Write Message"
-                className="w-full p-2 mb-4 border-none rounded-[10px]"
+                className="w-full p-2 mb-4 border-none rounded-[10px] bg-white"
                 rows={4}
               ></textarea>
               <button

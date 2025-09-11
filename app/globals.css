@@ -199,7 +199,7 @@ h6 {
 }
 
 .project .swiper-button-next,
-.swiper-button-prev {
+.project .swiper-button-prev {
   color: white;
   background: rgba(0, 0, 0, 0.5);
   width: 40px;
@@ -211,13 +211,13 @@ h6 {
 }
 
 .project .swiper-button-next:after,
-.swiper-button-prev:after {
+.project .swiper-button-prev:after {
   font-size: 20px;
   font-weight: bold;
 }
 
 .projectSwiper {
-  padding-bottom: 50px;
+  padding-bottom: 50px !important;
 }
 
 .project .swiper-pagination-bullet-active {
