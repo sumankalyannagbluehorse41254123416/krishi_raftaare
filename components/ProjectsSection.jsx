@@ -20,10 +20,10 @@ export default function ProjectsSection() {
       <div className="max-w-7xl px-2 mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <p className="text-sm md:text-lg leading-6 uppercase tracking-[0.1em]">
+          <p className="text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6">
             Recently completed work
           </p>
-          <h2 className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em]">
+          <h2 className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline">
             Explore Our Projects
           </h2>
         </div>
@@ -38,8 +38,8 @@ export default function ProjectsSection() {
           pagination={{ clickable: true }}
           navigation
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
           }}
           className="projectSwiper"
