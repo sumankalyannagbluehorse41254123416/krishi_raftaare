@@ -12,7 +12,7 @@ export default function ProjectsSection() {
     { img: "/image/projects-img.webp", alt: "Inhaler" },
     { img: "/image/projects-img.webp", alt: "Oxygen Mask" },
     { img: "/image/projects-img.webp", alt: "Respirator Mask" },
-    { img: "/image/projects-img.webp", alt: "Respirator Mask" },
+    { img: "/image/projects-img.webp", alt: "Respirator1 Mask" },
   ];
 
   return (

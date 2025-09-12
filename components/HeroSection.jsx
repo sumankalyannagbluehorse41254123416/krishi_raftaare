@@ -75,7 +75,7 @@ export default function HeroSlider() {
         <SwiperSlide>
           <div className="relative flex items-center justify-center h-full overflow-hidden">
             <img
-              src="/image/photo-1500937386664-56d1dfef3854 (1).avif"
+              src="/image/hero_img1.avif"
               alt="Farm Field"
               className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700"
             />
@@ -107,7 +107,7 @@ export default function HeroSlider() {
         <SwiperSlide>
           <div className="relative flex items-center justify-center h-full overflow-hidden">
             <img
-              src="/image/photo-1500937386664-56d1dfef3854 (1).avif"
+              src="/image/hero_img2.avif"
               alt="Harvest"
               className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700"
             />
@@ -139,7 +139,7 @@ export default function HeroSlider() {
         <SwiperSlide>
           <div className="relative flex items-center justify-center h-full overflow-hidden">
             <img
-              src="/image/photo-1500937386664-56d1dfef3854 (1).avif"
+              src="/image/hero_img3.avif"
               alt="Farmers"
               className="slide-image absolute top-0 left-0 w-full h-full object-cover scale-110 transition-transform duration-700"
             />
