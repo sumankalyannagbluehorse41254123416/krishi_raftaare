@@ -34,13 +34,17 @@ export default async function HomePage() {
 
     const servicesData =
     siteData?.pageItemdataWithSubsection?.[2] ?? null;
+
+    const projectsData = siteData?.pageItemdataWithSubsection?.[3] ?? null;
+
   return (
     <div className="font-poppins bg-light text-dark">
       <HeroSection />
       <PureAgricultureSection />
       <AgricultureMattersSection data={agricultureMattersData} />
       <ServicesSection siteData={siteData} sectionData={servicesData} />
-      <ProjectsSection />
+      <ProjectsSection sectionData={projectsData} />
+
       <ProductsSection />
       <ContactSection />
       <DiscoverSection />
