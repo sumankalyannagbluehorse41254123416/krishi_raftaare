@@ -6,26 +6,32 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function ProjectsSection() {
-  const slides = [
-    { img: "/image/projects-img.webp", alt: "Biometric Office Locker" },
-    { img: "/image/projects-img.webp", alt: "Inhaler" },
-    { img: "/image/projects-img.webp", alt: "Oxygen Mask" },
-    { img: "/image/projects-img.webp", alt: "Respirator Mask" },
-    { img: "/image/projects-img.webp", alt: "Respirator1 Mask" },
-  ];
+export default function ProjectsSection({ sectionData }) {
+  if (!sectionData) return null;
+
+  const sectionTitle = sectionData?.title ?? "Recently completed work";
+  const sectionShortDescription =
+    sectionData?.shortDescription ?? "Explore Our Projects";
+
+  const slides =
+    sectionData?.subsections?.map((sub) => ({
+      img: sub?.image ?? "/image/projects-img.webp",
+      alt: sub?.title ?? "Project Image",
+    })) ?? [];
 
   return (
     <section className="project relative block bg-white pb-10">
       <div className="max-w-7xl px-2 mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <p className="text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6">
-            Recently completed work
-          </p>
-          <h2 className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline">
-            Explore Our Projects
-          </h2>
+          <p
+            className="text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
+            dangerouslySetInnerHTML={{ __html: sectionTitle }}
+          />
+          <h2
+            className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline"
+            dangerouslySetInnerHTML={{ __html: sectionShortDescription }}
+          />
         </div>
 
         {/* Swiper */}
