@@ -1,6 +1,10 @@
 "use client";
 
-export default function ProjectSection() {
+export default function ProductsSection({ sectionData }) {
+  if (!sectionData) return null;
+
+  const { title, image, subsections = [] } = sectionData;
+
   return (
     <section className="project bg-green-700">
       <div className="max-w-[1920px] mx-auto">
@@ -8,8 +12,8 @@ export default function ProjectSection() {
           {/* Image */}
           <div className="w-full lg:w-2/5">
             <img
-              src="/image/family-plating-together-ground.avif"
-              alt="Family farming"
+              src={image || "/image/fallback.jpg"}
+              alt={title || "Project Section"}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -17,9 +21,9 @@ export default function ProjectSection() {
           {/* Content */}
           <div className="justify-center lg:justify-start w-full lg:w-3/5 p-6">
             <div className="text-left flex gap-10 xl:gap-20">
-              {/* Circle Icon */}
+              {/* Circle Icon (static) */}
               <div className="hidden sm:block">
-                <div className=" w-10 xl:w-16 h-10 xl:h-16 bg-green-800 rounded-full flex items-center justify-center mt-5">
+                <div className="w-10 xl:w-16 h-10 xl:h-16 bg-green-800 rounded-full flex items-center justify-center mt-5">
                   <svg
                     className="w-8 xl:w-10 h-8 xl:h-10 text-white"
                     fill="none"
@@ -30,7 +34,9 @@ export default function ProjectSection() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 
+                         1.18 6.88L12 17.77l-6.18 3.25L7 14.14 
+                         2 9.27l6.91-1.01L12 2z"
                     />
                   </svg>
                 </div>
@@ -49,30 +55,35 @@ export default function ProjectSection() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 
+                         1.18 6.88L12 17.77l-6.18 3.25L7 14.14 
+                         2 9.27l6.91-1.01L12 2z"
                     />
                   </svg>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Providing High Quality Products
-                </h2>
+
+                {/* Section Title */}
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+
+                {/* Subsections */}
                 <div className="space-y-4">
-                  <div className="flex items-center justify-center md:justify-start">
-                    <span className="p-4 lg:p-6 bg-yellow-400 rounded-full flex items-center justify-center mr-4"></span>
-                    <p className="text-sm leading-6">
-                      <span className="text-base font-bold">Making Healthy Foods</span>
-                      <br />
-                      There are many variations of passages available but the majority have simply free text.
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <span className="p-4 lg:p-6 bg-yellow-400 rounded-full flex items-center justify-center mr-4"></span>
-                    <p className="text-sm leading-6">
-                      <span className="text-base font-bold">Our Agriculture Growth</span>
-                      <br />
-                      There are many variations of passages available but the majority have simply free text.
-                    </p>
-                  </div>
+                  {subsections.map((sub, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-center md:justify-start"
+                    >
+                      <span className="p-4 lg:p-6 bg-yellow-400 rounded-full flex items-center justify-center mr-4"></span>
+                      <p className="text-sm leading-6">
+                        <span className="text-base font-bold">{sub.title}</span>
+                        <br />
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: sub.description || "",
+                          }}
+                        />
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
