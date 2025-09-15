@@ -26,13 +26,13 @@ export default function AgricultureMattersSection({ data }) {
 
   return (
     <section
-      className="agriculture_matters relative bg-center bg-no-repeat w-full h-[500px]"
+      className="agriculture_matters relative bg-center bg-no-repeat w-full h-auto lg:h-[500px]"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between pt-20 lg:pt-28 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row justify-between pb-12 lg:pb-0 pt-12 lg:pt-28 text-center lg:text-left">
           {/* Left Content */}
-          <div className="relative">
+          <div className="relative max-w-full lg:max-w-[640px] xl:max-w-3xl">
             <h2 className="text-white text-3xl md:text-5xl xl:text-6xl leading-tight tracking-tight font-bold">
               {title}
             </h2>
@@ -46,7 +46,7 @@ export default function AgricultureMattersSection({ data }) {
           </div>
 
           {/* Right Content */}
-          <div className="mt-8 sm:mt-12 lg:mt-0">
+          <div className="mt-8 lg:mt-12 lg:mt-0">
             <a
               href={videoUrl}
               className="border border-white rounded-full p-[26px_27px_18px] text-white text-3xl inline-flex items-center justify-center"

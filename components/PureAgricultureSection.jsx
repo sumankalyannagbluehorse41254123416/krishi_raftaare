@@ -25,7 +25,7 @@ export default function AboutSection() {
             </div>
 
             {/* Successfully Project Completed */}
-            <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 mr-6 ml-6">
+            <div className="success_project justify-self-center bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 w-fit rounded-xl mt-10 sm:mt-0 sm:absolute  sm:left-[10%] md:left-[19%] lg:left-0 -bottom-10 lg:bottom-24 xl:bottom-6 mr-6 ml-6">
               <div className="pr-4">
                 <img
                   src="/image/unnamed-removebg-preview.png"
@@ -83,7 +83,7 @@ export default function AboutSection() {
                 <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0 z-10">
                   <a
                     href="#"
-                    className="bg-yellow-400 pt-1.5 pr-2.5 pb-1 pl-2.5 rounded-full inline-flex items-center justify-center"
+                    className="bg-yellow-400 pt-2 pr-2.5 pb-2 pl-2.5 rounded-full inline-flex items-center justify-center"
                   >
                     <i className="fa-solid fa-play"></i>
                   </a>
