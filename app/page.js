@@ -13,7 +13,8 @@ import { headers } from "next/headers";
 const stripHtml = (html) => (html ? html.replace(/<[^>]*>/g, "") : "");
 
 export default async function HomePage() {
-  const rqHeaders = headers();
+  // ✅ Await headers() since it’s async in App Router
+  const rqHeaders = await headers();
   const host = rqHeaders.get("host") || "localhost:3000";
   const headersObj = Object.fromEntries(rqHeaders.entries());
 
@@ -29,25 +30,43 @@ export default async function HomePage() {
 
   console.log("siteData", siteData);
 
+
+  
+
   const agricultureMattersData =
-    siteData?.pageItemdataWithSubsection?.[0];
+    siteData?.pageItemdataWithSubsection?.[0] ?? null;
 
-    const servicesData =
+
+  const servicesData =
+    siteData?.pageItemdataWithSubsection?.[1] ?? null;
+
+  const projectsData =
     siteData?.pageItemdataWithSubsection?.[2] ?? null;
+    
+  const productsData =
+    siteData?.pageItemdataWithSubsection?.[3] ?? null;
 
-    const projectsData = siteData?.pageItemdataWithSubsection?.[3] ?? null;
+  const discoverData =
+    siteData?.pageItemdataWithSubsection?.[4] ?? null; 
+
+    const heroSlidesData = [
+      siteData?.pageItemdataWithSubsection?.[5] ?? null,
+      siteData?.pageItemdataWithSubsection?.[6] ?? null,
+      siteData?.pageItemdataWithSubsection?.[7] ?? null,
+    ];
+    const sections = siteData?.pageItemdataWithSubsection ?? [];
+    
 
   return (
     <div className="font-poppins bg-light text-dark">
-      <HeroSection />
-      <PureAgricultureSection />
+      <HeroSection slides={heroSlidesData} />
+      <PureAgricultureSection data={sections} />
       <AgricultureMattersSection data={agricultureMattersData} />
       <ServicesSection siteData={siteData} sectionData={servicesData} />
       <ProjectsSection sectionData={projectsData} />
-
-      <ProductsSection />
+      <ProductsSection sectionData={productsData} />
       <ContactSection />
-      <DiscoverSection />
+      <DiscoverSection sectionData={discoverData} /> 
     </div>
   );
 }

@@ -1,6 +1,12 @@
 "use client";
+import React from "react";
 
-export default function AboutSection() {
+export default function AboutSection({ data = [] }) {
+  const s8 = data?.[8] ?? {};
+  const s9 = data?.[9] ?? {};
+  const s10 = data?.[10] ?? {};
+  const s11 = data?.[11] ?? {};
+
   return (
     <section className="py-16 bg-white relative">
       {/* Background Image */}
@@ -14,69 +20,85 @@ export default function AboutSection() {
 
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Image Section */}
+          {/* Left Image Section (Index 8) */}
           <div className="relative hero_bottom_img">
             <div className="about_img justify-self-center">
               <img
-                src="/image/about-v1-img1.webp"
+                src={s8?.image || "/image/about-v1-img1.webp"}
                 className="lg:w-full h-auto rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-lg"
-                alt="About Image"
+                alt={s8?.title || "About Image"}
               />
             </div>
 
             {/* Successfully Project Completed */}
-            <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 mr-6 ml-6">
-              <div className="pr-4">
-                <img
-                  src="/image/unnamed-removebg-preview.png"
-                  alt=""
-                  className="w-24 h-24 object-cover"
-                />
+            {s8?.subsections?.[0] && (
+              <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 mr-6 ml-6">
+                <div className="pr-4">
+                  <img
+                    src={s8.subsections[0].image}
+                    alt=""
+                    className="w-24 h-24 object-cover"
+                  />
+                </div>
+                <div className="border-l-2 border-white/50 pl-4 xl:pl-8 relative block">
+                  <p
+                    className="text-3xl xl:text-5xl text-white pb-2"
+                    dangerouslySetInnerHTML={{
+                      __html: s8.subsections[0].title || "",
+                    }}
+                  />
+                  <p
+                    className="text-sm xl:text-lg text-white"
+                    dangerouslySetInnerHTML={{
+                      __html: s8.subsections[0].description || "",
+                    }}
+                  />
+                </div>
               </div>
-              <div className="border-l-2 border-white/50 pl-4 xl:pl-8 relative block">
-                <p className="text-3xl xl:text-5xl text-white pb-2">87600</p>
-                <p className="text-sm xl:text-lg text-white">
-                  Successfully Project Completed
-                </p>
-              </div>
-            </div>
+            )}
           </div>
 
-          {/* Right Text Section */}
+          {/* Right Text Section (Index 9) */}
           <div className="p-6 z-10">
-            <span className="text-left block">Our introduction</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-2">
-              Pure Agriculture and Organic Form
-            </h2>
-            <h2 className="md:text-2xl text-xl my-4 xl:my-8 font-bold">
-              We’re Leader in Agriculture Market
-            </h2>
-            <p className="text-sm xl:text-lg">
-              There are many variations of passages of available but the
-              majority have suffered alteration in some form, by injected humou
-              or randomised words even slightly believable.
-            </p>
+            <span
+              className="text-left block"
+              dangerouslySetInnerHTML={{ __html: s9?.title || "" }}
+            />
+            <h2
+              className="text-3xl md:text-5xl font-bold mt-2"
+              dangerouslySetInnerHTML={{ __html: s9?.shortDescription || "" }}
+            />
+            <h2
+              className="md:text-2xl text-xl my-4 xl:my-8 font-bold"
+              dangerouslySetInnerHTML={{
+                __html: s9?.subsections?.[0]?.title || "",
+              }}
+            />
+            <p
+              className="text-sm xl:text-lg"
+              dangerouslySetInnerHTML={{
+                __html: s9?.subsections?.[0]?.description || "",
+              }}
+            />
 
+            {/* List Section (Index 11) */}
             <ul className="flex flex-col mt-6">
-              {[
-                "Lorem ipsum dolor sit amet consectetur adipisicing",
-                "Lorem ipsum dolor sit amet consectetur adipisicing",
-                "Lorem ipsum dolor sit amet consectetur adipisicing",
-                "Lorem ipsum dolor sit amet consectetur adipisicing",
-              ].map((text, idx) => (
-                <li key={idx} className="list-disc text-sm xl:text-lg m-0 pt-4">
-                  {text}
-                </li>
+              {s11?.subsections?.map((sub, idx) => (
+                <li
+                  key={idx}
+                  className="list-disc text-sm xl:text-lg m-0 pt-4"
+                  dangerouslySetInnerHTML={{ __html: sub?.title || "" }}
+                />
               ))}
             </ul>
 
-            {/* Video Section */}
+            {/* Video Section (Index 10) */}
             <div className="flex gap-14 items-center mt-12">
               <div className="relative">
                 <div className="relative hero_bottom_video">
                   <img
-                    src="/image/about-v1-video-img.webp"
-                    alt=""
+                    src={s10?.image}
+                    alt={s10?.title}
                     className="rounded-lg"
                   />
                 </div>
@@ -90,12 +112,16 @@ export default function AboutSection() {
                 </div>
               </div>
               <div>
-                <p className="text-md tracking-[0.1em] text-gray-600">
-                  Watch our video
-                </p>
-                <h5 className="xl:text-xl text-dark font-bold">
-                  Tips for Ripening your Fruits
-                </h5>
+                <p
+                  className="text-md tracking-[0.1em] text-gray-600"
+                  dangerouslySetInnerHTML={{
+                    __html: s10?.shortDescription || "",
+                  }}
+                />
+                <h5
+                  className="xl:text-xl text-dark font-bold"
+                  dangerouslySetInnerHTML={{ __html: s10?.title || "" }}
+                />
               </div>
             </div>
           </div>
