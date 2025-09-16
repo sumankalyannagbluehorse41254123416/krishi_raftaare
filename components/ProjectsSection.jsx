@@ -20,7 +20,7 @@ export default function ProjectsSection({ sectionData }) {
     })) ?? [];
 
   return (
-    <section className="project relative block bg-white pb-10">
+    <section className="project relative block bg-white pb-10" id="projects">
       <div className="max-w-7xl px-2 mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">

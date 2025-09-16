@@ -225,3 +225,6 @@ h6 {
   width: 15px;
   height: 15px;
 }
+html {
+  scroll-behavior: smooth;
+}

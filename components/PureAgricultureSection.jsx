@@ -8,7 +8,7 @@ export default function AboutSection({ data = [] }) {
   const s11 = data?.[11] ?? {};
 
   return (
-    <section className="py-16 bg-white relative">
+    <section className="py-16 bg-white relative" id="about">
       {/* Background Image */}
       <div className="absolute bottom-0 right-0 w-auto h-auto">
         <img

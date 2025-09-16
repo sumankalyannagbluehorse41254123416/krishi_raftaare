@@ -7,6 +7,7 @@ import ProductsSection from "@/components/ProductsSection";
 import ContactSection from "@/components/ContactSection";
 import DiscoverSection from "@/components/DiscoverSection";
 import { fetchPageData } from "@/services/fetchData.service";
+import { fetchFormFields } from "@/services/fetchFormFields";
 import { headers } from "next/headers";
 
 // Utility: strip HTML tags from CMS fields
@@ -30,32 +31,39 @@ export default async function HomePage() {
 
   console.log("siteData", siteData);
 
-
-  
-
   const agricultureMattersData =
     siteData?.pageItemdataWithSubsection?.[0] ?? null;
 
+  const servicesData = siteData?.pageItemdataWithSubsection?.[1] ?? null;
 
-  const servicesData =
-    siteData?.pageItemdataWithSubsection?.[1] ?? null;
+  const projectsData = siteData?.pageItemdataWithSubsection?.[2] ?? null;
 
-  const projectsData =
-    siteData?.pageItemdataWithSubsection?.[2] ?? null;
-    
-  const productsData =
-    siteData?.pageItemdataWithSubsection?.[3] ?? null;
+  const productsData = siteData?.pageItemdataWithSubsection?.[3] ?? null;
 
-  const discoverData =
-    siteData?.pageItemdataWithSubsection?.[4] ?? null; 
+  const discoverData = siteData?.pageItemdataWithSubsection?.[4] ?? null;
 
-    const heroSlidesData = [
-      siteData?.pageItemdataWithSubsection?.[5] ?? null,
-      siteData?.pageItemdataWithSubsection?.[6] ?? null,
-      siteData?.pageItemdataWithSubsection?.[7] ?? null,
-    ];
-    const sections = siteData?.pageItemdataWithSubsection ?? [];
-    
+  const heroSlidesData = [
+    siteData?.pageItemdataWithSubsection?.[5] ?? null,
+    siteData?.pageItemdataWithSubsection?.[6] ?? null,
+    siteData?.pageItemdataWithSubsection?.[7] ?? null,
+  ];
+  const sections = siteData?.pageItemdataWithSubsection ?? [];
+
+  const contactData = siteData?.pageItemdataWithSubsection?.[12] ?? null;
+
+  let form = null;
+  let fields = null;
+
+  try {
+    const formFields = await fetchFormFields(
+      { host },
+      process.env.FROM_UID || process.env.NEXT_PUBLIC_FROM_UID
+    );
+    form = formFields.form;
+    fields = formFields.fields;
+  } catch (error) {
+    console.log("Error in fetching contact form fields:", error);
+  }
 
   return (
     <div className="font-poppins bg-light text-dark">
@@ -65,8 +73,8 @@ export default async function HomePage() {
       <ServicesSection siteData={siteData} sectionData={servicesData} />
       <ProjectsSection sectionData={projectsData} />
       <ProductsSection sectionData={productsData} />
-      <ContactSection />
-      <DiscoverSection sectionData={discoverData} /> 
+      <ContactSection data={contactData} form={form} fields={fields} />
+      <DiscoverSection sectionData={discoverData} />
     </div>
   );
 }
