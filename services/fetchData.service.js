@@ -5,11 +5,11 @@ export async function fetchPageData({ host, ...rh }, pageSlug) {
   console.log("host", host);
   console.log("rh", rh);
 
-  const baseurl = process.env.NEXT_PUBLIC_CMS_BASE_URL;
+  const baseurl =  process.env.CMS_BASE_URL || (process.env.NEXT_PUBLIC_CMS_BASE_URL);
   const timeStamp = Date.now();
 
-  const key = process.env.NEXT_PUBLIC_CMS_API_KEY;
-  const secret = process.env.NEXT_PUBLIC_CMS_API_SECRET;
+  const key = process.env.CMS_API_KEY||(process.env.NEXT_PUBLIC_CMS_API_KEY);
+  const secret = process.env.CMS_API_SECRET||(process.env.NEXT_PUBLIC_CMS_API_SECRET);
 
   const body = {
     timestamp: timeStamp,

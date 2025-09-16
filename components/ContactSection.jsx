@@ -1,66 +1,161 @@
 "use client";
 
-export default function ContactSection() {
+import { useState, useEffect } from "react";
+import { handleSubmitForm } from "@/services/handleSubmit";
+
+export default function ContactSection({ data, fields }) {
+  const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  if (!data) return null;
+
+  // optional: init formData when fields load
+  useEffect(() => {
+    if (fields && fields.length > 0) {
+      const initial = {};
+      fields.forEach((f) => {
+        initial[f.name] = "";
+      });
+      setFormData(initial);
+    }
+  }, [fields]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    const newErrors = {};
+
+    fields.forEach((field) => {
+      if (field.required && !formData[field.name]?.trim()) {
+        newErrors[field.name] = `${field.label || field.name} is required`;
+      }
+    });
+
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
+    try {
+      setLoading(true);
+
+      const response = await handleSubmitForm(
+        window.location.host,
+        formData
+      );
+
+      if (response) {
+        alert("Form submitted successfully!");
+
+        const reset = {};
+        fields.forEach((f) => (reset[f.name] = ""));
+        setFormData(reset);
+      } else {
+        alert("Submission failed!");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Submission failed!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section className="bg-white pt-10 pb-10 md:pb-20 lg:py-10">
+    <section className="bg-white pt-10 pb-10 md:pb-20 lg:py-10" id="contact">
       <div className="mx-auto p-6 max-w-5xl">
+        {/* Section Heading */}
         <div className="text-center">
-          <h5 className="text-sm mb-2">CONTACT WITH US</h5>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto">
-            Looking for Agriculture & Organic Eco Services?
-          </h1>
+          <h5 className="text-sm mb-2">{data.title}</h5>
+          <h1
+            className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: data.shortDescription }}
+          />
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-10 lg:gap-20 pt-[30px]">
+          {/* Left Side */}
           <div className="flex-1">
-            <p className="text-gray-600 mb-6 text-sm">
-              There are many variations of passages of available but the majority have suffered alteration in some form, by injected humour or randomised words even believe.
-            </p>
+            {data.subsections?.[0]?.description && (
+              <p
+                className="text-gray-600 mb-6 text-sm"
+                dangerouslySetInnerHTML={{
+                  __html: data.subsections[0].description,
+                }}
+              />
+            )}
+
             <ul className="text-left text-gray-600 list-disc pl-5 mb-6">
-              <li>Making this the first generator on the internet</li>
-              <li>Lorem ipsum is not simply random text</li>
-              <li>If you are going to use a passage</li>
+              {data.subsections?.slice(1, 4).map((sub, idx) => (
+                <li key={idx}>{sub.title}</li>
+              ))}
             </ul>
 
             <div className="relative mt-[45px]">
               <div className="relative z-10 agricultural_img">
-                <img
-                  src="image/planting.jpg"
-                  alt="Agriculture"
-                  className="rounded-lg shadow-md h-28 lg:h-40 w-32 lg:w-40 object-cover"
-                />
+                {data.subsections?.[4]?.image && (
+                  <img
+                    src={data.subsections[4].image}
+                    alt="Agriculture"
+                    className="rounded-lg shadow-md h-28 lg:h-40 w-32 lg:w-40 object-cover"
+                  />
+                )}
               </div>
-              <img
-                src="image/health_benefits_carrots.webp"
-                alt="Organic Eco"
-                className="rounded-lg shadow-md mt-4 w-[300px] absolute top-[40px] right-0"
-              />
+              {data.subsections?.[5]?.image && (
+                <img
+                  src={data.subsections[5].image}
+                  alt="Organic Eco"
+                  className="rounded-lg shadow-md mt-4 w-[300px] absolute top-[40px] right-0"
+                />
+              )}
             </div>
           </div>
 
+          {/* Right Side Form */}
           <div className="flex-1 bg-[#f5f5f5] p-10 rounded-lg shadow-md mt-28 lg:mt-0">
-            <h2 className="text-xl font-semibold text-green-800 mb-4">Contact With Us</h2>
-            <form>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full p-3 mb-4 border-none rounded-[10px] bg-white"
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full p-3 mb-4 border-none rounded-[10px] bg-white"
-              />
-              <textarea
-                placeholder="Write Message"
-                className="w-full p-2 mb-4 border-none rounded-[10px] bg-white"
-                rows={4}
-              ></textarea>
+            <h2 className="text-xl font-semibold text-green-800 mb-4">
+              Contact With Us
+            </h2>
+
+            <form onSubmit={(e) => e.preventDefault()}>
+              {fields?.map((field, index) => (
+                <div key={`${field.id}-${index}`} className="mb-4">
+                  {field.type === "textarea" ? (
+                    <textarea
+                      name={field.name}
+                      placeholder={field.label}
+                      className="w-full p-2 border-none rounded-[10px] bg-white"
+                      rows={4}
+                      value={formData[field.name] || ""}
+                      onChange={handleChange}
+                    />
+                  ) : (
+                    <input
+                      type={field.type || "text"}
+                      name={field.name}
+                      placeholder={field.label}
+                      className="w-full p-3 border-none rounded-[10px] bg-white"
+                      value={formData[field.name] || ""}
+                      onChange={handleChange}
+                    />
+                  )}
+                  {errors[field.name] && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors[field.name]}
+                    </p>
+                  )}
+                </div>
+              ))}
+
               <button
-                type="submit"
+                type="button"
+                onClick={handleSubmit}
+                disabled={loading}
                 className="w-fit bg-[#f1cf69] text-white p-3 rounded hover:bg-yellow-500"
               >
-                SEND A MESSAGE
+                {loading ? "Submitting..." : "SEND A MESSAGE"}
               </button>
             </form>
           </div>

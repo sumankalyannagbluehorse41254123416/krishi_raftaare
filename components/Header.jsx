@@ -18,11 +18,11 @@ export default function Header() {
   // 🔥 Dynamic nav items
   const navItems = [
     { label: "Home", icon: FaHome, link: "#" },
-    { label: "About", icon: FaInfoCircle, link: "#" },
-    { label: "Services", icon: FaCogs, link: "#" },
-    { label: "Projects", icon: FaProjectDiagram, link: "#" },
-    { label: "Products", icon: FaSeedling, link: "#" },
-    { label: "Contact", icon: FaPhone, link: "#" },
+    { label: "About", icon: FaInfoCircle, link: "#about" },
+    { label: "Services", icon: FaCogs, link: "#services" },
+    { label: "Projects", icon: FaProjectDiagram, link: "#projects" },
+    { label: "Products", icon: FaSeedling, link: "#products" },
+    { label: "Contact", icon: FaPhone, link: "#contact" },
   ];
 
   return (

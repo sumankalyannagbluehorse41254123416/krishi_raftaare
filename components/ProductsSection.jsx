@@ -6,7 +6,7 @@ export default function ProductsSection({ sectionData }) {
   const { title, image, subsections = [] } = sectionData;
 
   return (
-    <section className="project bg-green-700">
+    <section className="project bg-green-700" id="products">
       <div className="max-w-[1920px] mx-auto">
         <div className="flex flex-col-reverse lg:flex-row items-center text-white rounded-lg overflow-hidden">
           {/* Image */}
