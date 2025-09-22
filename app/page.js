@@ -32,24 +32,24 @@ export default async function HomePage() {
   console.log("siteData", siteData);
 
   const agricultureMattersData =
-    siteData?.pageItemdataWithSubsection?.[0] ?? null;
+    siteData?.pageItemdataWithSubsection?.[7] ?? null;
 
-  const servicesData = siteData?.pageItemdataWithSubsection?.[1] ?? null;
+  const servicesData = siteData?.pageItemdataWithSubsection?.[8] ?? null;
 
-  const projectsData = siteData?.pageItemdataWithSubsection?.[2] ?? null;
+  const projectsData = siteData?.pageItemdataWithSubsection?.[9] ?? null;
 
-  const productsData = siteData?.pageItemdataWithSubsection?.[3] ?? null;
+  const productsData = siteData?.pageItemdataWithSubsection?.[10] ?? null;
 
-  const discoverData = siteData?.pageItemdataWithSubsection?.[4] ?? null;
+  const discoverData = siteData?.pageItemdataWithSubsection?.[12] ?? null;
 
   const heroSlidesData = [
-    siteData?.pageItemdataWithSubsection?.[5] ?? null,
-    siteData?.pageItemdataWithSubsection?.[6] ?? null,
-    siteData?.pageItemdataWithSubsection?.[7] ?? null,
+    siteData?.pageItemdataWithSubsection?.[0] ?? null,
+    siteData?.pageItemdataWithSubsection?.[1] ?? null,
+    siteData?.pageItemdataWithSubsection?.[2] ?? null,
   ];
   const sections = siteData?.pageItemdataWithSubsection ?? [];
 
-  const contactData = siteData?.pageItemdataWithSubsection?.[12] ?? null;
+  const contactData = siteData?.pageItemdataWithSubsection?.[11] ?? null;
 
   let form = null;
   let fields = null;
