@@ -32,7 +32,7 @@ export default function AgricultureMattersSection({ data }) {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between pt-20 lg:pt-28 text-center lg:text-left">
           {/* Left Content */}
-          <div className="relative">
+          <div className="relative max-w-15/24">
             <h2 className="text-white text-3xl md:text-5xl xl:text-6xl leading-tight tracking-tight font-bold">
               {title}
             </h2>

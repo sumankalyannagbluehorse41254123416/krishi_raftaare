@@ -19,7 +19,7 @@ export default function AboutSection({ data = [] }) {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
           {/* Left Image Section (Index 8) */}
           <div className="relative hero_bottom_img">
             <div className="about_img justify-self-center">
@@ -32,7 +32,7 @@ export default function AboutSection({ data = [] }) {
 
             {/* Successfully Project Completed */}
             {s8?.subsections?.[0] && (
-              <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 mr-6 ml-6">
+              <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 sm:w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 sm:mr-6 sm:ml-6">
                 <div className="pr-4">
                   <img
                     src={s8.subsections[0].image}
@@ -59,14 +59,14 @@ export default function AboutSection({ data = [] }) {
           </div>
 
           {/* Right Text Section (Index 9) */}
-          <div className="p-6 z-10">
+          <div className="sm:p-6 z-10">
             <span
               className="text-left block"
-              dangerouslySetInnerHTML={{ __html: s9?.title || "" }}
+              dangerouslySetInnerHTML={{ __html: s9?.shortDescription || "" }}
             />
             <h2
               className="text-3xl md:text-5xl font-bold mt-2"
-              dangerouslySetInnerHTML={{ __html: s9?.shortDescription || "" }}
+              dangerouslySetInnerHTML={{ __html: s9?.title || "" }}
             />
             <h2
               className="md:text-2xl text-xl my-4 xl:my-8 font-bold"
@@ -82,7 +82,7 @@ export default function AboutSection({ data = [] }) {
             />
 
             {/* List Section (Index 11) */}
-            <ul className="flex flex-col mt-6">
+            <ul className="flex flex-col mt-6 pl-5">
               {s11?.subsections?.map((sub, idx) => (
                 <li
                   key={idx}
@@ -105,7 +105,7 @@ export default function AboutSection({ data = [] }) {
                 <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0 z-10">
                   <a
                     href="#"
-                    className="bg-yellow-400 pt-1.5 pr-2.5 pb-1 pl-2.5 rounded-full inline-flex items-center justify-center"
+                    className="bg-yellow-400 pt-2 pr-2.5 pb-2 pl-2.5 rounded-full inline-flex items-center justify-center"
                   >
                     <i className="fa-solid fa-play"></i>
                   </a>
