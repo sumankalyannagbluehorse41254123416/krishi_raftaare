@@ -2,10 +2,10 @@
 import React from "react";
 
 export default function AboutSection({ data = [] }) {
-  const s8 = data?.[8] ?? {};
-  const s9 = data?.[9] ?? {};
-  const s10 = data?.[10] ?? {};
-  const s11 = data?.[11] ?? {};
+  const s3 = data?.[3] ?? {};
+  const s4 = data?.[4] ?? {};
+  const s5 = data?.[5] ?? {};
+  const s6 = data?.[6] ?? {};
 
   return (
     <section className="py-16 bg-white relative" id="about">
@@ -24,18 +24,18 @@ export default function AboutSection({ data = [] }) {
           <div className="relative hero_bottom_img">
             <div className="about_img justify-self-center">
               <img
-                src={s8?.image || "/image/about-v1-img1.webp"}
+                src={s3?.image || "/image/about-v1-img1.webp"}
                 className="lg:w-full h-auto rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-lg"
-                alt={s8?.title || "About Image"}
+                alt={s3?.title || "About Image"}
               />
             </div>
 
             {/* Successfully Project Completed */}
-            {s8?.subsections?.[0] && (
+            {s3?.subsections?.[0] && (
               <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 sm:w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 sm:mr-6 sm:ml-6">
                 <div className="pr-4">
                   <img
-                    src={s8.subsections[0].image}
+                    src={s3.subsections[0].image}
                     alt=""
                     className="w-24 h-24 object-cover"
                   />
@@ -44,13 +44,13 @@ export default function AboutSection({ data = [] }) {
                   <p
                     className="text-3xl xl:text-5xl text-white pb-2"
                     dangerouslySetInnerHTML={{
-                      __html: s8.subsections[0].title || "",
+                      __html: s3.subsections[0].title || "",
                     }}
                   />
                   <p
                     className="text-sm xl:text-lg text-white"
                     dangerouslySetInnerHTML={{
-                      __html: s8.subsections[0].description || "",
+                      __html: s3.subsections[0].description || "",
                     }}
                   />
                 </div>
@@ -62,28 +62,33 @@ export default function AboutSection({ data = [] }) {
           <div className="sm:p-6 z-10">
             <span
               className="text-left block"
-              dangerouslySetInnerHTML={{ __html: s9?.shortDescription || "" }}
+              dangerouslySetInnerHTML={{ __html: s4?.shortDescription || "" }}
             />
             <h2
               className="text-3xl md:text-5xl font-bold mt-2"
-              dangerouslySetInnerHTML={{ __html: s9?.title || "" }}
+              dangerouslySetInnerHTML={{ __html: s4?.title || "" }}
             />
             <h2
               className="md:text-2xl text-xl my-4 xl:my-8 font-bold"
               dangerouslySetInnerHTML={{
-                __html: s9?.subsections?.[0]?.title || "",
+                __html: s4?.subsections?.[0]?.title || "",
               }}
             />
             <p
               className="text-sm xl:text-lg"
               dangerouslySetInnerHTML={{
-                __html: s9?.subsections?.[0]?.description || "",
+                __html: s4?.subsections?.[0]?.description || "",
               }}
             />
 
             {/* List Section (Index 11) */}
+<<<<<<< HEAD
             <ul className="flex flex-col mt-6 pl-5">
               {s11?.subsections?.map((sub, idx) => (
+=======
+            <ul className="flex flex-col mt-6">
+              {s5?.subsections?.map((sub, idx) => (
+>>>>>>> ea0d95304c9c025078e54ea3025b2893c4dea2f5
                 <li
                   key={idx}
                   className="list-disc text-sm xl:text-lg m-0 pt-4"
@@ -97,8 +102,8 @@ export default function AboutSection({ data = [] }) {
               <div className="relative">
                 <div className="relative hero_bottom_video">
                   <img
-                    src={s10?.image}
-                    alt={s10?.title}
+                    src={s6?.image}
+                    alt={s6?.title}
                     className="rounded-lg"
                   />
                 </div>
@@ -115,12 +120,12 @@ export default function AboutSection({ data = [] }) {
                 <p
                   className="text-md tracking-[0.1em] text-gray-600"
                   dangerouslySetInnerHTML={{
-                    __html: s10?.shortDescription || "",
+                    __html: s6?.shortDescription || "",
                   }}
                 />
                 <h5
                   className="xl:text-xl text-dark font-bold"
-                  dangerouslySetInnerHTML={{ __html: s10?.title || "" }}
+                  dangerouslySetInnerHTML={{ __html: s6?.title || "" }}
                 />
               </div>
             </div>
