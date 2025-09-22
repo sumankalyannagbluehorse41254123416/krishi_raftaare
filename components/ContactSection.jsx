@@ -68,9 +68,9 @@ export default function ContactSection({ data, fields }) {
       <div className="mx-auto p-6 max-w-5xl">
         {/* Section Heading */}
         <div className="text-center">
-          <h5 className="text-sm mb-2">{data.title}</h5>
-          <h1
-            className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto"
+          <p className="text-sm mb-2">{data.title}</p>
+          <h2
+            className="text-3xl md:text-4xl xl:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto"
             dangerouslySetInnerHTML={{ __html: data.shortDescription }}
           />
         </div>
@@ -153,7 +153,7 @@ export default function ContactSection({ data, fields }) {
                 type="button"
                 onClick={handleSubmit}
                 disabled={loading}
-                className="w-fit bg-[#f1cf69] text-white p-3 rounded hover:bg-yellow-500"
+                className="w-fit bg-[var(--light-yellow)] text-[var(--deepest-green)] p-3 rounded hover:bg-yellow-500"
               >
                 {loading ? "Submitting..." : "SEND A MESSAGE"}
               </button>

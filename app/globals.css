@@ -30,6 +30,11 @@ h6 {
   background-color: var(--color-white);
 }
 
+:root {
+  --light-yellow: #f1cf69;
+  --deepest-green: #334b35;
+  --light-green: #6d8c54;
+}
 
 /* Custom container to control max-width */
 .container {
@@ -108,7 +113,7 @@ h6 {
 
 .about_img::before {
   position: absolute;
-  background-color: green;
+  background-color: var(--deepest-green);
   content: "";
   width: 28px;
   height: 110px;
@@ -123,7 +128,7 @@ h6 {
   bottom: 0;
   width: 30px;
   height: 350px;
-  background: #f1cf69;
+  background: var(--light-yellow);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   content: "";
@@ -136,7 +141,7 @@ h6 {
   position: absolute;
   height: 50px;
   width: 50px;
-  background-color: #6d8c54;
+  background-color: var(--light-green);
   border-radius: 10px;
   right: 0px;
   top: -21px;
@@ -148,7 +153,7 @@ h6 {
   position: absolute;
   height: 25px;
   width: 25px;
-  background-color: #f1cf69;
+  background-color: var(--light-yellow);
   border-radius: 5px;
   right: 0px;
   top: -28px;
@@ -169,7 +174,7 @@ h6 {
   content: "";
   width: 28px;
   height: 81px;
-  background-color: #f1cf69;
+  background-color: var(--light-yellow);
   position: absolute;
   right: -38px;
   top: 0;

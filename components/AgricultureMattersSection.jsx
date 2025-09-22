@@ -32,14 +32,14 @@ export default function AgricultureMattersSection({ data }) {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between pt-20 lg:pt-28 text-center lg:text-left">
           {/* Left Content */}
-          <div className="relative max-w-15/24">
-            <h2 className="text-white text-3xl md:text-5xl xl:text-6xl leading-tight tracking-tight font-bold">
+          <div className="relative lg:max-w-12/24 xl:max-w-14/24">
+            <h2 className="text-white text-3xl md:text-4xl xl:text-5xl leading-tight tracking-tight font-bold">
               {title}
             </h2>
             <div className="mt-10">
               <a
                 href="#"
-                className="relative inline-block align-middle appearance-none border-none outline-none bg-[var(--agriox-base,#f1cf69)] text-[var(--agriox-primary,#334b35)] text-sm font-bold uppercase py-[15px] sm:py-[18px] px-[30px] sm:px-[50px] rounded-[10px] tracking-[0.1em] transition-all duration-300 ease-linear overflow-hidden z-[1]"
+                className="relative inline-block align-middle appearance-none border-none outline-none bg-[var(--light-yellow)] text-[var(--deepest-green)] text-sm font-bold uppercase py-[15px] sm:py-[18px] px-[30px] sm:px-[50px] rounded-[10px] tracking-[0.1em] transition-all duration-300 ease-linear overflow-hidden z-[1]"
                 dangerouslySetInnerHTML={{ __html: safeDescription }}
               ></a>
             </div>
@@ -54,7 +54,7 @@ export default function AgricultureMattersSection({ data }) {
               <i className="fa-solid fa-play" style={{ fontSize: "38px" }}></i>
             </a>
             
-            <h5 className="text-3xl text-yellow-400 mt-5 pl-10">
+            <h5 className="text-2xl lg:text-3xl text-[var(--light-yellow)] mt-5 lg:pl-10">
               {videoText}
             </h5>
           </div>

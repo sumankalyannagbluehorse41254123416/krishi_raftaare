@@ -29,7 +29,7 @@ export default function ProjectsSection({ sectionData }) {
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
           />
           <h2
-            className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline"
+            className="text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
             dangerouslySetInnerHTML={{ __html: sectionShortDescription }}
           />
         </div>

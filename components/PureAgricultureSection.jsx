@@ -32,7 +32,7 @@ export default function AboutSection({ data = [] }) {
 
             {/* Successfully Project Completed */}
             {s3?.subsections?.[0] && (
-              <div className="success_project bg-green-700 flex items-center justify-center px-6 xl:px-10 py-8 sm:w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 sm:mr-6 sm:ml-6">
+              <div className="success_project bg-[var(--light-green)] flex items-center justify-center px-6 xl:px-10 py-8 sm:w-fit rounded-xl mt-10 sm:mt-0 sm:absolute -bottom-10 sm:left-[10%] md:left-[19%] lg:left-0 lg:bottom-6 sm:mr-6 sm:ml-6">
                 <div className="pr-4">
                   <img
                     src={s3.subsections[0].image}
@@ -65,7 +65,7 @@ export default function AboutSection({ data = [] }) {
               dangerouslySetInnerHTML={{ __html: s4?.shortDescription || "" }}
             />
             <h2
-              className="text-3xl md:text-5xl font-bold mt-2"
+              className="text-3xl md:text-4xl xl:text-5xl font-bold mt-2"
               dangerouslySetInnerHTML={{ __html: s4?.title || "" }}
             />
             <h2
@@ -82,7 +82,7 @@ export default function AboutSection({ data = [] }) {
             />
 
             {/* List Section (Index 11) */}
-            <ul className="flex flex-col mt-6">
+            <ul className="flex flex-col mt-6 pl-5">
               {s5?.subsections?.map((sub, idx) => (
                 <li
                   key={idx}
@@ -105,7 +105,7 @@ export default function AboutSection({ data = [] }) {
                 <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0 z-10">
                   <a
                     href="#"
-                    className="bg-yellow-400 pt-2 pr-2.5 pb-2 pl-2.5 rounded-full inline-flex items-center justify-center"
+                    className="bg-[var(--light-yellow)] pt-2 pr-2.5 pb-2 pl-2.5 rounded-full inline-flex items-center justify-center"
                   >
                     <i className="fa-solid fa-play"></i>
                   </a>
@@ -113,13 +113,13 @@ export default function AboutSection({ data = [] }) {
               </div>
               <div>
                 <p
-                  className="text-md tracking-[0.1em] text-gray-600"
+                  className="text-sm sm:text-md tracking-[0.1em] text-gray-600"
                   dangerouslySetInnerHTML={{
                     __html: s6?.shortDescription || "",
                   }}
                 />
                 <h5
-                  className="xl:text-xl text-dark font-bold"
+                  className="text-sm xl:text-xl text-dark font-bold"
                   dangerouslySetInnerHTML={{ __html: s6?.title || "" }}
                 />
               </div>

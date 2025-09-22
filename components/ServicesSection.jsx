@@ -22,7 +22,7 @@ export default function ServicesSection({ sectionData }) {
               dangerouslySetInnerHTML={{ __html: sectionData.title ?? "" }}
             />
             <h2
-              className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
+              className="text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
               dangerouslySetInnerHTML={{ __html: sectionData.shortDescription ?? "" }}
             />
           </div>
@@ -53,7 +53,7 @@ export default function ServicesSection({ sectionData }) {
 
                   <a
                     href={sub.link ?? "#"}
-                    className="pt-3 text-xl inline-block w-14 h-14 rounded-full bg-[#f1cf69] mt-4 z-10 flex items-center justify-center"
+                    className="pt-3 text-xl inline-block w-14 h-14 rounded-full bg-[var(--light-yellow)] mt-4 z-10 flex items-center justify-center"
                   >
                     <i className="fa-solid fa-arrow-right"></i>
                   </a>

@@ -6,7 +6,7 @@ export default function ProductsSection({ sectionData }) {
   const { title, image, subsections = [] } = sectionData;
 
   return (
-    <section className="project bg-green-700" id="products">
+    <section className="project bg-[var(--light-green)]" id="products">
       <div className="max-w-[1920px] mx-auto">
         <div className="flex flex-col-reverse lg:flex-row items-center text-white rounded-lg overflow-hidden">
           {/* Image */}
@@ -23,7 +23,7 @@ export default function ProductsSection({ sectionData }) {
             <div className="text-left flex gap-10 xl:gap-20">
               {/* Circle Icon (static) */}
               <div className="hidden sm:block">
-                <div className="w-10 xl:w-16 h-10 xl:h-16 bg-green-800 rounded-full flex items-center justify-center mt-5">
+                <div className="w-10 xl:w-16 h-10 xl:h-16 bg-[var(--deepest-green)] rounded-full flex items-center justify-center mt-5">
                   <svg
                     className="w-8 xl:w-10 h-8 xl:h-10 text-white"
                     fill="none"
@@ -63,7 +63,7 @@ export default function ProductsSection({ sectionData }) {
                 </div>
 
                 {/* Section Title */}
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+                <h2 className="text-3xl md:text-4xl xl:text-4xl font-bold mb-4">{title}</h2>
 
                 {/* Subsections */}
                 <div className="space-y-4">
@@ -72,7 +72,7 @@ export default function ProductsSection({ sectionData }) {
                       key={index}
                       className="flex items-center justify-center md:justify-start"
                     >
-                      <span className="p-4 lg:p-6 bg-yellow-400 rounded-full flex items-center justify-center mr-4"></span>
+                      <span className="p-4 lg:p-6 bg-[var(--light-yellow)] rounded-full flex items-center justify-center mr-4"></span>
                       <p className="text-sm leading-6">
                         <span className="text-base font-bold">{sub.title}</span>
                         <br />
