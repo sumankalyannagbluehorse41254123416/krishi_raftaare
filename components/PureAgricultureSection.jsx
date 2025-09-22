@@ -82,13 +82,8 @@ export default function AboutSection({ data = [] }) {
             />
 
             {/* List Section (Index 11) */}
-<<<<<<< HEAD
-            <ul className="flex flex-col mt-6 pl-5">
-              {s11?.subsections?.map((sub, idx) => (
-=======
             <ul className="flex flex-col mt-6">
               {s5?.subsections?.map((sub, idx) => (
->>>>>>> ea0d95304c9c025078e54ea3025b2893c4dea2f5
                 <li
                   key={idx}
                   className="list-disc text-sm xl:text-lg m-0 pt-4"
