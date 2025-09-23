@@ -28,11 +28,11 @@ export default function HighlightSection({ sectionData }) {
               </svg>
             </div>
           </div>
-          <h2 className="text-green-800 font-semibold text-3xl xl:text-4xl">
+          <h2 className="text-green-800 font-semibold text-3xl xl:text-4xl text-[var(--deepest-green)]">
             {title}
           </h2>
         </div>
-        <button className="bg-[var(--deepest-green)] mt-4 md:mt-0 text-[var(--light-yellow)] px-6 md:px-10 py-3 md:py-4 text-sm rounded-lg">
+        <button className="button_yellow_hover bg-[var(--deepest-green)] mt-4 md:mt-0 text-[var(--light-yellow)] px-6 md:px-10 py-3 md:py-5 text-sm font-semibold rounded-lg cursor-pointer">
           Discover More
         </button>
       </div>

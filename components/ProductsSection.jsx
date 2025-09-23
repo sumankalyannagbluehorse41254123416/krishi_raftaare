@@ -23,46 +23,21 @@ export default function ProductsSection({ sectionData }) {
             <div className="text-left flex gap-10 xl:gap-20">
               {/* Circle Icon (static) */}
               <div className="hidden sm:block">
-                <div className="w-10 xl:w-16 h-10 xl:h-16 bg-[var(--deepest-green)] rounded-full flex items-center justify-center mt-5">
-                  <svg
-                    className="w-8 xl:w-10 h-8 xl:h-10 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 
-                         1.18 6.88L12 17.77l-6.18 3.25L7 14.14 
-                         2 9.27l6.91-1.01L12 2z"
-                    />
-                  </svg>
+                <div
+                  className="w-10 xl:w-22 h-10 xl:h-22 rounded-full flex items-center justify-center mt-5 animate-spin-slow"
+                >
+                  <img src="image/providing-quality.webp" alt="Providing Quality" />
                 </div>
               </div>
 
               {/* Text Content */}
               <div className="md:max-w-md">
-                <div className="w-6 h-6 bg-green-800 rounded-full flex items-center justify-center mb-2">
-                  <svg
-                    className="w-4 h-4 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 
-                         1.18 6.88L12 17.77l-6.18 3.25L7 14.14 
-                         2 9.27l6.91-1.01L12 2z"
-                    />
-                  </svg>
+                <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2">
+                  <img src="/image/sec-title-icon2.webp" alt="" />
                 </div>
 
                 {/* Section Title */}
+                <p className="text-xs  leading-6 uppercase tracking-[0.1em]">MODERN AGRICULTURE</p>
                 <h2 className="text-3xl md:text-4xl xl:text-4xl font-bold mb-4">{title}</h2>
 
                 {/* Subsections */}
@@ -72,7 +47,9 @@ export default function ProductsSection({ sectionData }) {
                       key={index}
                       className="flex items-center justify-center md:justify-start"
                     >
-                      <span className="p-4 lg:p-6 bg-[var(--light-yellow)] rounded-full flex items-center justify-center mr-4"></span>
+                      <span className=" px-3 py-2 bg-[var(--light-yellow)] rounded-full flex items-center justify-center mr-4">
+                        <img src="/image/wheat_icon.svg" alt=""  className="h-auto w-20 object-cover"/>
+                      </span>
                       <p className="text-sm leading-6">
                         <span className="text-base font-bold">{sub.title}</span>
                         <br />

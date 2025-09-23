@@ -66,11 +66,16 @@ export default function ContactSection({ data, fields }) {
   return (
     <section className="bg-white pt-10 pb-10 md:pb-20 lg:py-10" id="contact">
       <div className="mx-auto p-6 max-w-5xl">
+
+
         {/* Section Heading */}
         <div className="text-center">
+          <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
+            <img alt src="/image/sec-title-icon1.webp" />
+          </div>
           <p className="text-sm mb-2">{data.title}</p>
           <h2
-            className="text-3xl md:text-4xl xl:text-5xl font-bold text-green-800 mb-4 max-w-xl mx-auto"
+            className="text-3xl md:text-4xl xl:text-5xl font-bold text-[var(--deepest-green)] mb-4 max-w-xl mx-auto"
             dangerouslySetInnerHTML={{ __html: data.shortDescription }}
           />
         </div>
@@ -153,7 +158,7 @@ export default function ContactSection({ data, fields }) {
                 type="button"
                 onClick={handleSubmit}
                 disabled={loading}
-                className="w-fit bg-[var(--light-yellow)] text-[var(--deepest-green)] p-3 rounded hover:bg-yellow-500"
+                className="button_hover text-sm px-5 py-4 w-fit bg-[var(--light-yellow)] text-[var(--deepest-green)] p-3 rounded-lg font-semibold"
               >
                 {loading ? "Submitting..." : "SEND A MESSAGE"}
               </button>

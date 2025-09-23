@@ -72,8 +72,8 @@ export default async function HomePage() {
       <PureAgricultureSection data={sections} />
       <AgricultureMattersSection data={agricultureMattersData} />
       <ServicesSection siteData={siteData} sectionData={servicesData} />
-      <Team/>
-      <ProjectsSection sectionData={projectsData} />
+      {/* <Team/> */}
+      {/* <ProjectsSection sectionData={projectsData} /> */}
       <ProductsSection sectionData={productsData} />
       <ContactSection data={contactData} form={form} fields={fields} />
       <DiscoverSection sectionData={discoverData} />

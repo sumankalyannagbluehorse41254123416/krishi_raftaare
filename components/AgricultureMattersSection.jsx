@@ -39,7 +39,7 @@ export default function AgricultureMattersSection({ data }) {
             <div className="mt-10">
               <a
                 href="#"
-                className="relative inline-block align-middle appearance-none border-none outline-none bg-[var(--light-yellow)] text-[var(--deepest-green)] text-sm font-bold uppercase py-[15px] sm:py-[18px] px-[30px] sm:px-[50px] rounded-[10px] tracking-[0.1em] transition-all duration-300 ease-linear overflow-hidden z-[1]"
+                className="button_hover relative inline-block align-middle appearance-none border-none outline-none bg-[var(--light-yellow)] text-[var(--deepest-green)] text-sm font-bold uppercase py-[15px] sm:py-[18px] px-[30px] sm:px-[50px] rounded-[10px] tracking-[0.1em] transition-all duration-300 ease-linear overflow-hidden"
                 dangerouslySetInnerHTML={{ __html: safeDescription }}
               ></a>
             </div>
@@ -47,13 +47,17 @@ export default function AgricultureMattersSection({ data }) {
 
           {/* Right Content */}
           <div className="mt-8 sm:mt-12 lg:mt-0">
-            <a
-              href={videoUrl}
-              className="border border-white rounded-full p-[26px_27px_18px] text-white text-3xl inline-flex items-center justify-center"
-            >
-              <i className="fa-solid fa-play" style={{ fontSize: "38px" }}></i>
-            </a>
-            
+            <div className="visible animate-zoomIn duration-1500 delay-300">
+              <a
+                href={videoUrl}
+                className="play_icon border border-white rounded-full p-[26px_29px_22px] text-white text-3xl inline-flex items-center justify-center"
+              >
+                <span className="border-animation border-1"></span>
+                <span className="border-animation border-2"></span>
+                <span className="border-animation border-3"></span>
+                <i className="fa-solid fa-play" style={{ fontSize: "38px" }}></i>
+              </a>
+            </div>
             <h5 className="text-2xl lg:text-3xl text-[var(--light-yellow)] mt-5 lg:pl-10">
               {videoText}
             </h5>
