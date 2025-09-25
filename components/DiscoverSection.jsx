@@ -3,7 +3,8 @@
 export default function HighlightSection({ sectionData }) {
   if (!sectionData) return null;
 
-  const { title } = sectionData;
+  const { title,shortDescription } = sectionData;
+  
 
   return (
     <div className="bg-[var(--light-yellow)]">
@@ -28,12 +29,12 @@ export default function HighlightSection({ sectionData }) {
               </svg>
             </div>
           </div>
-          <h2 className=" font-semibold text-3xl xl:text-3xl text-[var(--deepest-green)]">
+          <h2 className="text-green-800 font-semibold text-3xl xl:text-4xl text-[var(--deepest-green)]">
             {title}
           </h2>
         </div>
         <button className="button_yellow_hover bg-[var(--deepest-green)] mt-4 md:mt-0 text-[var(--light-yellow)] px-6 md:px-10 py-3 md:py-5 text-sm font-semibold rounded-lg cursor-pointer">
-          Discover More
+          {shortDescription.replace(/^<p>/i, "").replace(/<\/p>$/i, "").trim() || "Discover More"}
         </button>
       </div>
     </div>
