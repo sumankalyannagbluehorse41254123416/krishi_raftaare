@@ -92,9 +92,9 @@ export default function HeroSlider({ slides }) {
               />
               <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
               <div className="relative z-20 text-center text-white max-w-4xl px-5">
-                <span className="text-lg md:text-xl font-medium tracking-widest text-gray-200 uppercase block mb-4">
+                {/* <span className="text-lg md:text-xl font-medium tracking-widest text-gray-200 uppercase block mb-4">
                   {slide?.subsections?.[0]?.title || ""}
-                </span>
+                </span> */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   {slide?.title || ""}
                 </h1>
