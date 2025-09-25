@@ -25,11 +25,11 @@ export default function ProjectsSection({ sectionData }) {
         {/* Heading */}
         <div className="text-center mb-12">
           <p
-            className="text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
+            className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
           />
           <h2
-            className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline"
+            className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
             dangerouslySetInnerHTML={{ __html: sectionShortDescription }}
           />
         </div>

@@ -61,7 +61,7 @@ export default function HeroSlider({ slides }) {
         pagination={{
           clickable: true,
           renderBullet: (_, className) =>
-            `<span class="${className} !w-3 !h-3 !bg-white !opacity-50"></span>`,
+            `<span className="${className} !w-3 !h-3 !bg-white !opacity-50"></span>`,
         }}
         navigation={{ nextEl: ".arrow-next", prevEl: ".arrow-prev" }}
         className="heroSwiper h-full w-full"
@@ -109,7 +109,7 @@ export default function HeroSlider({ slides }) {
                 {slide?.subsections?.[0]?.description && (
                   <SafeHtml
                     html={slide.subsections[0].description}
-                    className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold text-lg py-3 px-10 rounded-full transition-all duration-300 uppercase tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-1"
+                    className="button_hover inline-block bg-[var(--light-yellow)] text-[var(--deepest-green)] font-bold text-sm py-4 px-10 rounded-lg transition-all duration-300 uppercase tracking-wide shadow-lg cursor-pointer"
                   />
                 )}
               </div>

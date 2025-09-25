@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ProductsSection from "@/components/ProductsSection";
 import ContactSection from "@/components/ContactSection";
 import DiscoverSection from "@/components/DiscoverSection";
+import Team from "@/components/Team";
 import { fetchPageData } from "@/services/fetchData.service";
 import { fetchFormFields } from "@/services/fetchFormFields";
 import { headers } from "next/headers";
@@ -71,7 +72,8 @@ export default async function HomePage() {
       <PureAgricultureSection data={sections} />
       <AgricultureMattersSection data={agricultureMattersData} />
       <ServicesSection siteData={siteData} sectionData={servicesData} />
-      <ProjectsSection sectionData={projectsData} />
+      {/* <Team/> */}
+      {/* <ProjectsSection sectionData={projectsData} /> */}
       <ProductsSection sectionData={productsData} />
       <ContactSection data={contactData} form={form} fields={fields} />
       <DiscoverSection sectionData={discoverData} />

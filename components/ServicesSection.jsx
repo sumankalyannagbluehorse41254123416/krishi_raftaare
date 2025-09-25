@@ -17,12 +17,15 @@ export default function ServicesSection({ sectionData }) {
         <div className="container mx-auto px-4">
           {/* Heading */}
           <div className="text-center mb-12">
+             <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
+            <img alt src="/image/sec-title-icon1.webp" />
+          </div>
             <p
-              className="text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
+              className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
               dangerouslySetInnerHTML={{ __html: sectionData.title ?? "" }}
             />
             <h2
-              className="text-3xl md:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
+              className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
               dangerouslySetInnerHTML={{ __html: sectionData.shortDescription ?? "" }}
             />
           </div>
@@ -42,18 +45,18 @@ export default function ServicesSection({ sectionData }) {
                     <img src={sub.image} alt={sub.title} className="w-28 h-auto" />
                   </div>
 
-                  <h3 className="text-3xl leading-9 mb-4">
+                  <h3 className="text-3xl leading-9 mb-4 text-[var(--deepest-green)]">
                     <a href={sub.link ?? "#"} dangerouslySetInnerHTML={{ __html: sub.title ?? "" }} />
                   </h3>
 
                   <p
-                    className="text-md leading-7"
+                    className="text-md leading-7 text-[var(--light-gray)]"
                     dangerouslySetInnerHTML={{ __html: sub.description ?? "" }}
                   />
 
                   <a
                     href={sub.link ?? "#"}
-                    className="pt-3 text-xl inline-block w-14 h-14 rounded-full bg-[#f1cf69] mt-4 z-10 flex items-center justify-center"
+                    className="pt-3 text-xl inline-block w-14 h-14 rounded-full bg-[var(--light-yellow)] mt-4 z-10 flex items-center justify-center"
                   >
                     <i className="fa-solid fa-arrow-right"></i>
                   </a>
