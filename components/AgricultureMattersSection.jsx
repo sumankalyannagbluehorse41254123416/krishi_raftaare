@@ -38,7 +38,7 @@ export default function AgricultureMattersSection({ data }) {
             </h2>
             <div className="mt-10">
               <a
-                href="#"
+                href="#contact"
                 className="button_hover relative inline-block align-middle appearance-none border-none outline-none bg-[var(--light-yellow)] text-[var(--deepest-green)] text-sm font-bold uppercase py-[15px] sm:py-[18px] px-[30px] sm:px-[50px] rounded-[10px] tracking-[0.1em] transition-all duration-300 ease-linear overflow-hidden"
                 dangerouslySetInnerHTML={{ __html: safeDescription }}
               ></a>
