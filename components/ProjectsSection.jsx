@@ -24,6 +24,9 @@ export default function ProjectsSection({ sectionData }) {
       <div className="max-w-7xl px-2 mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
+          <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
+            <img src="/image/sec-title-icon1.webp" />
+          </div>
           <p
             className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em]"
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
@@ -61,7 +64,7 @@ export default function ProjectsSection({ sectionData }) {
                   />
                   <div className="absolute z-50 bottom-0 mx-2 right-0 left-0 scale-y-0 group-hover:scale-y-100 transition-transform duration-400 ease-in-out">
                     <p className="text-md bg-[var(--light-yellow)] px-10 py-1 rounded-tl-lg rounded-tr-lg w-fit relative">srijani</p>
-                    <p className="text-md bg-[var(--light-green)] px-10 py-7 rounded-tl-lg rounded-tr-lg relative">Web Designer</p>
+                    <p className="text-md bg-[var(--light-green)] px-10 py-7 rounded-tr-lg relative">Web Designer</p>
                   </div>
                 </div>
               </div>
