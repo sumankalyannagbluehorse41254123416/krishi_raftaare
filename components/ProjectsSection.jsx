@@ -24,6 +24,9 @@ export default function ProjectsSection({ sectionData }) {
       <div className="max-w-7xl px-2 mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
+          <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
+            <img src="/image/sec-title-icon1.webp" />
+          </div>
           <p
             className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em]"
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
@@ -63,7 +66,7 @@ export default function ProjectsSection({ sectionData }) {
                     <p className="text-md bg-[var(--light-yellow)] px-10 py-1 rounded-tl-lg rounded-tr-lg w-fit relative">
                       {sectionData?.subsections?.[index]?.title?.trim() || ""}
                     </p>
-                    <p className="text-md bg-[var(--light-green)] px-10 py-7 rounded-tl-lg rounded-tr-lg relative">
+                    <p className="text-md bg-[var(--light-green)] px-10 py-7 rounded-tr-lg relative">
                       {sectionData?.subsections?.[index]?.description
                         ?.replace(/^<p>/i, "")
                         .replace(/<\/p>$/i, "")

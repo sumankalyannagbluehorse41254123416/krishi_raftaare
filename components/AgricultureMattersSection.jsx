@@ -33,6 +33,9 @@ export default function AgricultureMattersSection({ data }) {
         <div className="flex flex-col lg:flex-row justify-between pt-20 lg:pt-28 text-center lg:text-left">
           {/* Left Content */}
           <div className="relative lg:max-w-12/24 xl:max-w-14/24">
+            <div className="w-15 h-8 rounded-full flex items-center justify-center mb-2 ">
+            <img src="/image/video-leaf-1-1.webp" />
+          </div>
             <h2 className="text-white text-3xl md:text-4xl xl:text-5xl leading-tight tracking-tight font-bold">
               {title}
             </h2>
