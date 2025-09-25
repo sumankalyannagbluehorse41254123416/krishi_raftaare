@@ -56,7 +56,7 @@ export default function ProductsSection({ sectionData }) {
                         />
                       </span>
                       <div className="text-sm leading-6">
-                        <h2 className="text-base font-bold">{sub.title}</h2>
+                        <h3 className="text-base font-bold">{sub.title}</h3>
 
                         <div
                           dangerouslySetInnerHTML={{

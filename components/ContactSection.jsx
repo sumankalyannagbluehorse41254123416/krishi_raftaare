@@ -75,7 +75,7 @@ export default function ContactSection({ data, fields }) {
               .trim()}
           </p>
           <h2
-            className="text-3xl md:text-4xl xl:text-5xl font-bold text-[var(--deepest-green)] mb-4 max-w-xl mx-auto"
+            className="text-3xl md:text-4xl xl:text-5xl font-bold text-[var(--deepest-green)] mb-4 max-w-3xl mx-auto"
             dangerouslySetInnerHTML={{ __html: data.title }}
           />
         </div>

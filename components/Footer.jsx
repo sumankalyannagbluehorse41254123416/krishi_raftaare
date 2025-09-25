@@ -67,7 +67,7 @@ export default function Footer() {
       {/* Footer bottom */}
       <div className="border-t border-gray-700 bg-[var(--light-green)]  py-4 text-center">
         <div className="container mx-auto px-4">
-          <p>&copy; {new Date().getFullYear()} AgriOx Farm. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} <a href="https://www.bluehorse.in/" className="underline">BlueHorse Software</a> | All rights reserved.</p>
         </div>
       </div>
     </footer>

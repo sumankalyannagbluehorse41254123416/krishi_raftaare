@@ -20,12 +20,12 @@ export default function ServicesSection({ sectionData }) {
              <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
             <img src="/image/sec-title-icon1.webp" />
           </div>
-            <p
+            <div
               className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
               dangerouslySetInnerHTML={{ __html: sectionData.shortDescription ?? "" }}
             />
             <h2
-              className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
+              className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline"
               dangerouslySetInnerHTML={{ __html: sectionData.title ?? "" }}
             />
           </div>

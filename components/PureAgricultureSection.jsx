@@ -95,7 +95,7 @@ export default function AboutSection({ data = [] }) {
                       __html: s3.subsections[0].title || "",
                     }}
                   />
-                  <p
+                  <div
                     className="text-sm xl:text-lg text-white"
                     dangerouslySetInnerHTML={{
                       __html: s3.subsections[0].description || "",
@@ -110,7 +110,7 @@ export default function AboutSection({ data = [] }) {
             <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2">
               <img src="/image/sec-title-icon1.webp" />
             </div>
-            <span
+            <div
               className="text-left block text-[var(--deepest-green)]"
               dangerouslySetInnerHTML={{ __html: s4?.shortDescription || "" }}
             />
