@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="mb-4">
                 <img src="/image/logo.jpg" alt="" className="w-22" />
               </div>
-              <p>Providing sustainable agricultural solutions for over 20 years.</p>
+              <p>Providing farming solutions for over 6,000 farmers.</p>
             </div>
 
             {/* Quick Links */}
@@ -35,19 +35,20 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Seeds</h3>
+              <h3 className="text-xl font-semibold mb-4">Services</h3>
               <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:text-primary transition">Fertilizers & Pesticides</a>
+                 <li>
+                  <a href="#services" className="hover:text-primary transition">High-Yield Seeds</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition">Weather Reports</a>
+                  <a href="#services" className="hover:text-primary transition">Fertilizers & Pesticides</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition">Soil Management</a>
+                  <a href="#services" className="hover:text-primary transition">Weather Reports</a>
                 </li>
+              
                 <li>
-                  <a href="#" className="hover:text-primary transition">Market Access</a>
+                  <a href="#services" className="hover:text-primary transition">Market Access</a>
                 </li>
               </ul>
             </div>
@@ -56,9 +57,10 @@ export default function Footer() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
               <ul className="space-y-2">
-                <li>123 Farm Road, Countryside</li>
-                <li>info@agrioxfarm.com</li>
-                <li>+1 (123) 456-7890</li>
+                <li>Yogitha Biofarming Pvt Ltd</li>
+                <li><a href="#"> info@krishiraftaar.com</a> </li>
+                <li>+91-7601841610</li>
+                <li>Taljuli, Kharagpur, West Bengal – 721301</li>
               </ul>
             </div>
           </div>

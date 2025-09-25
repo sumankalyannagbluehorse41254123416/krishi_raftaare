@@ -63,10 +63,10 @@ export default function ProjectsSection({ sectionData }) {
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute z-50 bottom-0 mx-2 right-0 left-0 scale-y-0 group-hover:scale-y-100 transition-transform duration-400 ease-in-out">
-                    <p className="text-md bg-[var(--light-yellow)] px-10 py-1 rounded-tl-lg rounded-tr-lg w-fit relative">
+                    <p className="text-md bg-[var(--light-yellow)] px-5 py-1 rounded-tl-lg rounded-tr-lg w-fit relative">
                       {sectionData?.subsections?.[index]?.title?.trim() || ""}
                     </p>
-                    <p className="text-md bg-[var(--light-green)] px-10 py-7 rounded-tr-lg relative">
+                    <p className="text-md bg-[var(--light-green)] px-5 py-4 rounded-tr-lg relative">
                       {sectionData?.subsections?.[index]?.description
                         ?.replace(/^<p>/i, "")
                         .replace(/<\/p>$/i, "")
