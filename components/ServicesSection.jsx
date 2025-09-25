@@ -22,11 +22,11 @@ export default function ServicesSection({ sectionData }) {
           </div>
             <p
               className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
-              dangerouslySetInnerHTML={{ __html: sectionData.title ?? "" }}
+              dangerouslySetInnerHTML={{ __html: sectionData.shortDescription ?? "" }}
             />
             <h2
               className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
-              dangerouslySetInnerHTML={{ __html: sectionData.shortDescription ?? "" }}
+              dangerouslySetInnerHTML={{ __html: sectionData.title ?? "" }}
             />
           </div>
 
@@ -36,13 +36,13 @@ export default function ServicesSection({ sectionData }) {
               <div key={index} className="shadow-lg rounded-lg overflow-hidden relative">
                 {/* Card background */}
                 <div className="pb-16">
-                  <img src={sectionData.image} alt="service" className="w-full" />
+                  <img src={sub.image} alt={sub.title}className="w-full" />
                 </div>
 
                 <div className="relative text-center px-9 pt-3 pb-6 bg-white">
                   {/* Round icon */}
                   <div className="shadow-lg w-fit rounded-full absolute left-0 right-0 mx-auto -top-[122px] bg-white">
-                    <img src={sub.image} alt={sub.title} className="w-28 h-auto" />
+                    <img src={sectionData.image} alt="service" className="w-28 h-auto" />
                   </div>
 
                   <h3 className="text-3xl leading-9 mb-4 text-[var(--deepest-green)] xl:h-18 flex justify-center items-center">
