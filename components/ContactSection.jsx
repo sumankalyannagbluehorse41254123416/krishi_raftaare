@@ -71,7 +71,7 @@ export default function ContactSection({ data, fields }) {
         {/* Section Heading */}
         <div className="text-center">
           <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
-            <img alt src="/image/sec-title-icon1.webp" />
+            <img src="/image/sec-title-icon1.webp" />
           </div>
           <p className="text-sm mb-2">{data.title}</p>
           <h2
@@ -84,7 +84,7 @@ export default function ContactSection({ data, fields }) {
           {/* Left Side */}
           <div className="flex-1">
             {data.subsections?.[0]?.description && (
-              <p
+              <div
                 className="text-gray-600 mb-6 text-sm"
                 dangerouslySetInnerHTML={{
                   __html: data.subsections[0].description,
@@ -120,9 +120,9 @@ export default function ContactSection({ data, fields }) {
 
           {/* Right Side Form */}
           <div className="flex-1 bg-[#f5f5f5] p-10 rounded-lg shadow-md mt-28 lg:mt-0">
-            <h2 className="text-xl font-semibold text-green-800 mb-4">
+            <h3 className="text-xl font-semibold text-green-800 mb-4">
               Contact With Us
-            </h2>
+            </h3>
 
             <form onSubmit={(e) => e.preventDefault()}>
               {fields?.map((field, index) => (

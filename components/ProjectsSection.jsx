@@ -59,6 +59,9 @@ export default function ProjectsSection({ sectionData }) {
                     alt={slide.alt}
                     className="w-full h-auto object-cover"
                   />
+                  <div className="slider_img_content">
+                    <p>srijani</p>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

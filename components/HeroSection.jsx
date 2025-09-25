@@ -109,7 +109,7 @@ export default function HeroSlider({ slides }) {
                 {slide?.subsections?.[0]?.description && (
                   <SafeHtml
                     html={slide.subsections[0].description}
-                    className="button_hover inline-block bg-[var(--light-yellow)] text-[var(--deepest-green)] font-bold text-sm py-4 px-10 rounded-lg transition-all duration-300 uppercase tracking-wide shadow-lg cursor-pointer"
+                    className="button_hover inline-block bg-[var(--light-yellow)] text-[var(--deepest-green)] font-bold text-lg py-4 px-10 rounded-lg transition-all duration-300 uppercase tracking-wide shadow-lg cursor-pointer"
                   />
                 )}
               </div>

@@ -49,7 +49,7 @@ export default function AgricultureMattersSection({ data }) {
           <div className="mt-8 sm:mt-12 lg:mt-0">
             <div className="visible animate-zoomIn duration-1500 delay-300">
               <a
-                href={videoUrl}
+                href="https://www.youtube.com/watch?v=TDSf9Zi69d4"
                 className="play_icon border border-white rounded-full p-[26px_29px_22px] text-white text-3xl inline-flex items-center justify-center"
               >
                 <span className="border-animation border-1"></span>
