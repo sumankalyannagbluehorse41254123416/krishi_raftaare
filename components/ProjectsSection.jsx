@@ -25,11 +25,11 @@ export default function ProjectsSection({ sectionData }) {
         {/* Heading */}
         <div className="text-center mb-12">
           <p
-            className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
+            className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em]"
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
           />
-          <h2
-            className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-2 font-bold normal-case tracking-[-0.04em] inline-block"
+          <div
+            className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl leading-tight font-bold normal-case tracking-[-0.04em] inline-block"
             dangerouslySetInnerHTML={{ __html: sectionShortDescription }}
           />
         </div>
@@ -40,7 +40,7 @@ export default function ProjectsSection({ sectionData }) {
           slidesPerView={1}
           spaceBetween={20}
           loop={true}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 115000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation
           breakpoints={{
@@ -52,15 +52,16 @@ export default function ProjectsSection({ sectionData }) {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white rounded-lg overflow-hidden transition hover:scale-105 animate-on-scroll flip-in delay-[100ms]">
-                <div className="relative">
+              <div className="bg-white rounded-lg overflow-hidden transition animate-on-scroll flip-in delay-[100ms]">
+                <div className="relative explore_slider group">
                   <img
                     src={slide.img}
                     alt={slide.alt}
                     className="w-full h-auto object-cover"
                   />
-                  <div className="slider_img_content">
-                    <p>srijani</p>
+                  <div className="absolute z-50 bottom-0 mx-2 right-0 left-0 scale-y-0 group-hover:scale-y-100 transition-transform duration-400 ease-in-out">
+                    <p className="text-md bg-[var(--light-yellow)] px-10 py-1 rounded-tl-lg rounded-tr-lg w-fit relative">srijani</p>
+                    <p className="text-md bg-[var(--light-green)] px-10 py-7 rounded-tl-lg rounded-tr-lg relative">Web Designer</p>
                   </div>
                 </div>
               </div>
