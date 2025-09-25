@@ -3,8 +3,7 @@
 export default function HighlightSection({ sectionData }) {
   if (!sectionData) return null;
 
-  const { title,shortDescription } = sectionData;
-  
+  const { title, shortDescription } = sectionData;
 
   return (
     <div className="bg-[var(--light-yellow)]">
@@ -19,9 +18,14 @@ export default function HighlightSection({ sectionData }) {
             {title}
           </h2>
         </div>
-        <button className="button_yellow_hover bg-[var(--deepest-green)] mt-4 md:mt-0 text-[var(--light-yellow)] px-6 md:px-10 py-3 md:py-5 text-sm font-semibold rounded-lg cursor-pointer">
-          {shortDescription.replace(/^<p>/i, "").replace(/<\/p>$/i, "").trim() || "Discover More"}
-        </button>
+        <a href="#services">
+          <button className="button_yellow_hover bg-[var(--deepest-green)] mt-4 md:mt-0 text-[var(--light-yellow)] px-6 md:px-10 py-3 md:py-5 text-sm font-semibold rounded-lg cursor-pointer">
+            {shortDescription
+              .replace(/^<p>/i, "")
+              .replace(/<\/p>$/i, "")
+              .trim() || "Discover More"}
+          </button>
+        </a>
       </div>
     </div>
   );

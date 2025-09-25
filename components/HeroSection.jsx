@@ -41,13 +41,17 @@ export default function HeroSlider({ slides }) {
     });
 
     const paginationEl = document.querySelector(".swiper-pagination");
-    if (paginationEl)
-      observer.observe(paginationEl, { childList: true, subtree: true });
+    if (paginationEl) observer.observe(paginationEl, { childList: true, subtree: true });
 
     return () => observer.disconnect();
   }, []);
 
   if (!slides || slides.length === 0) return null;
+
+  // Static button texts
+  const staticButtons = ["Contact Us", "Explore Services", "Join Us"];
+  // Corresponding anchor links for each slide
+  const buttonLinks = ["#contact", "#services", "#contact"];
 
   return (
     <section className="relative h-[80vh] w-full overflow-hidden">
@@ -92,9 +96,6 @@ export default function HeroSlider({ slides }) {
               />
               <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
               <div className="relative z-20 text-center text-white max-w-4xl px-5">
-                {/* <span className="text-lg md:text-xl font-medium tracking-widest text-gray-200 uppercase block mb-4">
-                  {slide?.subsections?.[0]?.title || ""}
-                </span> */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   {slide?.title || ""}
                 </h1>
@@ -106,12 +107,13 @@ export default function HeroSlider({ slides }) {
                   />
                 )}
 
-                {slide?.subsections?.[0]?.description && (
-                  <SafeHtml
-                    html={slide.subsections[0].description}
-                    className="button_hover inline-block bg-[var(--light-yellow)] text-[var(--deepest-green)] font-bold text-lg py-4 px-10 rounded-lg transition-all duration-300 uppercase tracking-wide shadow-lg cursor-pointer"
-                  />
-                )}
+                {/* Single static button per slide with unique anchor link */}
+                <a
+                  href={buttonLinks[idx % buttonLinks.length]}
+                  className="button_hover inline-block bg-[var(--light-yellow)] text-[var(--deepest-green)] font-bold text-lg py-4 px-10 rounded-lg transition-all duration-300 uppercase tracking-wide shadow-lg cursor-pointer"
+                >
+                  {staticButtons[idx % staticButtons.length]}
+                </a>
               </div>
             </div>
           </SwiperSlide>
