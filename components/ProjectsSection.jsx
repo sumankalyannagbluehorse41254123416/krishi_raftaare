@@ -37,6 +37,8 @@ export default function ProjectsSection({ sectionData }) {
           />
         </div>
 
+    
+
         {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
