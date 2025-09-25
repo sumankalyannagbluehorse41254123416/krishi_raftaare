@@ -24,6 +24,11 @@ export const metadata = {
   title: "KrishiRaftaar – Empowering Farmers with Best Farming Solutions",
   description: "KrishiRaftaar empowers farmers through best farming solutions – seeds, fertilizers & pesticides, weather reports, market access, and agri equipment.",
 };
+export const openGraph = {
+  title: "KrishiRaftaar – Empowering Farmers with Best Farming Solutions",
+  description:
+    "KrishiRaftaar empowers farmers through best farming solutions – seeds, fertilizers & pesticides, weather reports, market access, and agri equipment.",
+};
 
 export default function RootLayout({ children }) {
   return (
