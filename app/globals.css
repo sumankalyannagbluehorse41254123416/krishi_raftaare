@@ -402,3 +402,8 @@ html {
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
 }
+
+.product_sub_content:first-child{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 28px;
+}

@@ -94,7 +94,7 @@ export default function AboutSection({ data = [] }) {
 
           <div className="sm:p-6 z-10">
             <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2">
-              <img alt src="/image/sec-title-icon1.webp" />
+              <img src="/image/sec-title-icon1.webp" />
             </div>
             <span
               className="text-left block text-[var(--deepest-green)]"
@@ -104,7 +104,7 @@ export default function AboutSection({ data = [] }) {
               className="text-[var(--deepest-green)] text-3xl md:text-4xl xl:text-5xl font-bold mt-2"
               dangerouslySetInnerHTML={{ __html: s4?.title || "" }}
             />
-            <h2
+            <h3
               className="md:text-2xl text-xl my-4 xl:my-8 font-bold text-[var(--light-green)]"
               dangerouslySetInnerHTML={{
                 __html: s4?.subsections?.[0]?.title || "",
@@ -139,7 +139,7 @@ export default function AboutSection({ data = [] }) {
                 <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0 z-10">
                   <div className="visible animate-zoomIn duration-1500 delay-300">
                     <a
-                      href="#"
+                      href="https://www.youtube.com/@krishiraftaar"
                       className="bg-[var(--light-yellow)] pt-2 pr-2.5 pb-2 pl-2.5 rounded-full inline-flex items-center justify-center"
                     >
                       <span className="border-animation border-1"></span>
@@ -151,7 +151,7 @@ export default function AboutSection({ data = [] }) {
                 </div>
               </div>
               <div>
-                <p
+                <div
                   className="text-sm sm:text-md tracking-[0.1em] text-gray-600 text-[var(--deepest-green)]"
                   dangerouslySetInnerHTML={{
                     __html: s6?.shortDescription || "",
