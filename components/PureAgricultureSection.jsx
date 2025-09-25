@@ -42,8 +42,22 @@ export default function AboutSection({ data = [] }) {
           transform: translateX(0);
           opacity: 1;
         }
+        .bg-right {
+          animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
       `}</style>
-      <div className="absolute bottom-0 right-0 w-auto h-auto">
+      <div className="bg-right absolute bottom-0 right-0 w-auto h-auto">
         <img
           src="/image/about-v1-bg.webp"
           className="w-auto h-auto"
