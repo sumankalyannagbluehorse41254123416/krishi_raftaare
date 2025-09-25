@@ -8,7 +8,7 @@ export default function AgricultureMattersSection({ data }) {
   const bgImage =
     data?.sectionImage ||
     data?.imageUrl ||
-    "/image/photo-bg.avif"; // fallback
+    "/image/Full_Banneer.jpg"; // fallback
   const title = data?.sectionTitle || data?.title || "Default Title";
   const shortDescription =
     data?.sectionDescription || data?.shortDescription || "Discover more";
