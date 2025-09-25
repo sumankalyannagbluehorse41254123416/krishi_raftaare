@@ -29,7 +29,7 @@ export default function HighlightSection({ sectionData }) {
               </svg>
             </div>
           </div>
-          <h2 className="text-green-800 font-semibold text-3xl xl:text-4xl text-[var(--deepest-green)]">
+          <h2 className="font-semibold text-3xl xl:text-3xl text-[var(--deepest-green)]">
             {title}
           </h2>
         </div>
