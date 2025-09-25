@@ -41,10 +41,7 @@ export default function ContactSection({ data, fields }) {
     try {
       setLoading(true);
 
-      const response = await handleSubmitForm(
-        window.location.host,
-        formData
-      );
+      const response = await handleSubmitForm(window.location.host, formData);
 
       if (response) {
         alert("Form submitted successfully!");
@@ -66,17 +63,20 @@ export default function ContactSection({ data, fields }) {
   return (
     <section className="bg-white pt-10 pb-10 md:pb-20 lg:py-10" id="contact">
       <div className="mx-auto p-6 max-w-5xl">
-
-
         {/* Section Heading */}
         <div className="text-center">
           <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
             <img src="/image/sec-title-icon1.webp" />
           </div>
-          <p className="text-sm mb-2">{data.title}</p>
+          <p className="text-sm mb-2">
+            {data.shortDescription
+              ?.replace(/^<p>/i, "")
+              .replace(/<\/p>$/i, "")
+              .trim()}
+          </p>
           <h2
             className="text-3xl md:text-4xl xl:text-5xl font-bold text-[var(--deepest-green)] mb-4 max-w-xl mx-auto"
-            dangerouslySetInnerHTML={{ __html: data.shortDescription }}
+            dangerouslySetInnerHTML={{ __html: data.title }}
           />
         </div>
 
