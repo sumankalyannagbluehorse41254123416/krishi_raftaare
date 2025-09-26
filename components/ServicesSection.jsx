@@ -17,9 +17,9 @@ export default function ServicesSection({ sectionData }) {
         <div className="container mx-auto px-4">
           {/* Heading */}
           <div className="text-center mb-12">
-             <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
-            <img src="/image/sec-title-icon1.webp" />
-          </div>
+            <div className="w-5 h-5 rounded-full flex items-center justify-center mb-2 mx-auto">
+              <img src="/image/sec-title-icon1.webp" />
+            </div>
             <div
               className="text-[var(--deepest-green)] text-sm md:text-lg leading-6 uppercase tracking-[0.1em] mb-6"
               dangerouslySetInnerHTML={{ __html: sectionData.shortDescription ?? "" }}
@@ -33,10 +33,12 @@ export default function ServicesSection({ sectionData }) {
           {/* Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-6">
             {sectionData.subsections?.map((sub, index) => (
-              <div key={index} className="shadow-lg rounded-lg overflow-hidden relative">
+              <div key={index} className="shadow-lg rounded-lg overflow-hidden relative ">
                 {/* Card background */}
                 <div className="pb-16">
-                  <img src={sub.image} alt={sub.title}className="w-full" />
+                  <div className="service_overlay">
+                    <img src={sub.image} alt={sub.title} className="w-full" />
+                  </div>
                 </div>
 
                 <div className="relative text-center px-9 pt-3 pb-6 bg-white">
