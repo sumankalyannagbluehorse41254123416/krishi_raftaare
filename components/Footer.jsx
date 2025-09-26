@@ -22,13 +22,13 @@ export default function Footer() {
                   <a href="#" className="hover:text-primary transition">Home</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition">About Us</a>
+                  <a href="#about" className="hover:text-primary transition">About Us</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition">Services</a>
+                  <a href="#services" className="hover:text-primary transition">Services</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition">Contact</a>
+                  <a href="#contact" className="hover:text-primary transition">Contact</a>
                 </li>
               </ul>
             </div>

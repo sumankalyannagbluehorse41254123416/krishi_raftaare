@@ -21,7 +21,7 @@ export default function Header() {
     { label: "About", icon: FaInfoCircle, link: "#about" },
     { label: "Services", icon: FaCogs, link: "#services" },
     { label: "Projects", icon: FaProjectDiagram, link: "#projects" },
-    { label: "Products", icon: FaSeedling, link: "#products" },
+    { label: "Solutions", icon: FaSeedling, link: "#products" },
     { label: "Contact", icon: FaPhone, link: "#contact" },
   ];
 
