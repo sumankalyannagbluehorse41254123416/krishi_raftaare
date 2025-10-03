@@ -35,6 +35,15 @@ export default function ContactSection({ data, fields }) {
       }
     });
 
+    fields.forEach((field) => {
+      if (field.name.toLowerCase() === "email" && formData[field.name]) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        if (!emailRegex.test(formData[field.name])) {
+          newErrors[field.name] = "Please enter a valid email address";
+        }
+      }
+    });
+
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
