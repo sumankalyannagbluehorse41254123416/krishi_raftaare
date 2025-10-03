@@ -55,14 +55,16 @@ export default function ProjectsSection({ sectionData }) {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white rounded-lg overflow-hidden transition animate-on-scroll flip-in delay-[100ms]">
+              <div className="bg-white rounded-lg overflow-hidden transition-all duration-300">
                 <div className="relative explore_slider group">
                   <img
                     src={slide.img}
                     alt={slide.alt}
                     className="w-full h-auto object-cover"
                   />
-                  <div className="absolute z-50 bottom-0 mx-2 right-0 left-0 scale-y-0 group-hover:scale-y-100 transition-transform duration-400 ease-in-out">
+                  <div className="absolute z-50 bottom-0 mx-2 right-0 left-0 
+                   md:scale-y-0 md:group-hover:scale-y-100 
+                   scale-y-100 transition-transform duration-400 ease-in-out">
                     <p className="text-md bg-[var(--light-yellow)] px-5 py-1 rounded-tl-lg rounded-tr-lg w-fit relative text-[var(--deepest-green)] font-medium">
                       {sectionData?.subsections?.[index]?.title?.trim() || ""}
                     </p>

@@ -16,16 +16,35 @@ export default function AboutSection({ data = [] }) {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        // Add rootMargin to trigger when element is near viewport
+        rootMargin: "50px" 
+      }
     );
 
-    if (successProjectRef.current) {
-      observer.observe(successProjectRef.current);
+    const element = successProjectRef.current;
+    
+    if (element) {
+      // Check if element is already visible on mount
+      const rect = element.getBoundingClientRect();
+      const isVisible = (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+      
+      if (isVisible) {
+        // If already visible, add animation class immediately
+        element.classList.add("animate-slide-in");
+      } else {
+        // Otherwise, observe for intersection
+        observer.observe(element);
+      }
     }
 
     return () => {
-      if (successProjectRef.current) {
-        observer.unobserve(successProjectRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, []);
@@ -54,6 +73,14 @@ export default function AboutSection({ data = [] }) {
           }
           100% {
             transform: translateY(0);
+          }
+        }
+
+        /* Mobile-specific fix */
+        @media (max-width: 639px) {
+          .success_project {
+            transform: translateX(0);
+            opacity: 1;
           }
         }
       `}</style>
@@ -166,7 +193,7 @@ export default function AboutSection({ data = [] }) {
               </div>
               <div>
                 <div
-                  className="text-sm sm:text-md tracking-[0.1em] text-gray-600 text-[var(--deepest-green)]"
+                  className="text-sm sm:text-md tracking-[0.1em] text-[var(--deepest-green)]"
                   dangerouslySetInnerHTML={{
                     __html: s6?.shortDescription || "",
                   }}

@@ -30,7 +30,7 @@ export default function AgricultureMattersSection({ data }) {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between pt-20 lg:pt-28 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row justify-between pt-16 lg:pt-28 pb-12 md:pb-0 text-center lg:text-left">
           {/* Left Content */}
           <div className="relative lg:max-w-12/24 xl:max-w-14/24">
             <div className="w-15 h-8 rounded-full flex items-center justify-center mb-2 ">

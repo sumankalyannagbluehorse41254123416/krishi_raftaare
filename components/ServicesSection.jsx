@@ -6,7 +6,7 @@ export default function ServicesSection({ sectionData }) {
   console.log("Subsections in Services:", sectionData.subsections);
 
   return (
-    <section className="relative bg-white pt-20 md:pt-40 pb-20 z-10" id="services">
+    <section className="relative bg-white pt-12 md:pt-40 pb-20 z-10" id="services">
       {/* Section background */}
       <div
         className="absolute bg-gray-100 z-[-1] bg-cover w-full bg-[bottom_center] h-[508px] top-0 bottom-0"

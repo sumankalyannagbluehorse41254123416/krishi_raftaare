@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className=" text-white ">
       <div className="bg-[var(--deepest-green)] pt-12 pb-10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5 lg:gap-8">
             {/* About */}
             <div>
               <div className="mb-4">

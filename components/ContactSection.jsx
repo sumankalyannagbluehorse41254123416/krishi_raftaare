@@ -61,7 +61,7 @@ export default function ContactSection({ data, fields }) {
   };
 
   return (
-    <section className="bg-white pt-10 pb-10 md:pb-20 lg:py-10" id="contact">
+    <section className="bg-white pt-10 pb-10 md:pb-12 lg:pb-20 lg:py-10" id="contact">
       <div className="mx-auto p-6 max-w-5xl">
         {/* Section Heading */}
         <div className="text-center">
