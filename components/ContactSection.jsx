@@ -10,7 +10,7 @@ export default function ContactSection({ data, fields }) {
 
   if (!data) return null;
 
-  // optional: init formData when fields load
+  // init formData when fields load
   useEffect(() => {
     if (fields && fields.length > 0) {
       const initial = {};
@@ -23,28 +23,55 @@ export default function ContactSection({ data, fields }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // ✅ Phone number: only digits, max 10 chars
+    if (name.toLowerCase().includes("phone")) {
+      const digitsOnly = value.replace(/\D/g, "");
+      if (digitsOnly.length <= 10) {
+        setFormData((prev) => ({ ...prev, [name]: digitsOnly }));
+      }
+      return;
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async () => {
     const newErrors = {};
+    let phoneInvalid = false;
 
     fields.forEach((field) => {
-      if (field.required && !formData[field.name]?.trim()) {
+      const value = formData[field.name];
+
+      if (field.required && !value?.trim()) {
         newErrors[field.name] = `${field.label || field.name} is required`;
       }
-    });
 
-    fields.forEach((field) => {
-      if (field.name.toLowerCase() === "email" && formData[field.name]) {
+      // ✅ Email validation
+      if (field.name.toLowerCase() === "email" && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-        if (!emailRegex.test(formData[field.name])) {
+        if (!emailRegex.test(value)) {
           newErrors[field.name] = "Please enter a valid email address";
+        }
+      }
+
+      // ✅ Phone validation: exactly 10 digits
+      if (field.type === "phone") {
+        if (!value || value.length !== 10) {
+          newErrors[field.name] = "Phone number must be exactly 10 digits";
+          phoneInvalid = true; // ✅ set flag to trigger alert
         }
       }
     });
 
     setErrors(newErrors);
+
+    // 🚨 Show alert if phone number invalid
+    if (phoneInvalid) {
+      alert("Phone number must be exactly 10 digits.");
+      return;
+    }
+
     if (Object.keys(newErrors).length > 0) return;
 
     try {
@@ -54,7 +81,6 @@ export default function ContactSection({ data, fields }) {
 
       if (response) {
         alert("Form submitted successfully!");
-
         const reset = {};
         fields.forEach((f) => (reset[f.name] = ""));
         setFormData(reset);
@@ -70,7 +96,10 @@ export default function ContactSection({ data, fields }) {
   };
 
   return (
-    <section className="bg-white pt-10 pb-10 md:pb-12 lg:pb-20 lg:py-10" id="contact">
+    <section
+      className="bg-white pt-10 pb-10 md:pb-12 lg:pb-20 lg:py-10"
+      id="contact"
+    >
       <div className="mx-auto p-6 max-w-5xl">
         {/* Section Heading */}
         <div className="text-center">
@@ -129,23 +158,21 @@ export default function ContactSection({ data, fields }) {
 
           {/* Right Side Form */}
           <div className="flex-1 bg-[#f5f5f5] p-10 rounded-lg shadow-md mt-28 lg:mt-0">
-            <h3 className="text-xl font-semibold text-green-800 mb-4">
+            <h3 className="text-xl font-semibold text-green-800 mb-6">
               Contact With Us
             </h3>
 
             <form onSubmit={(e) => e.preventDefault()}>
-              {fields?.map((field, index) => (
-                <div key={`${field.id}-${index}`} className="mb-4">
-                  {field.type === "textarea" ? (
-                    <textarea
-                      name={field.name}
-                      placeholder={field.label}
-                      className="w-full p-2 border-none rounded-[10px] bg-white"
-                      rows={4}
-                      value={formData[field.name] || ""}
-                      onChange={handleChange}
-                    />
-                  ) : (
+              {/* First name + Last name (normal stacked) */}
+              {fields
+                ?.filter(
+                  (f) =>
+                    !f.name.toLowerCase().includes("phone") &&
+                    !f.name.toLowerCase().includes("email") &&
+                    f.type !== "textarea"
+                )
+                .map((field, index) => (
+                  <div key={`${field.id}-${index}`} className="mb-4">
                     <input
                       type={field.type || "text"}
                       name={field.name}
@@ -154,14 +181,65 @@ export default function ContactSection({ data, fields }) {
                       value={formData[field.name] || ""}
                       onChange={handleChange}
                     />
-                  )}
-                  {errors[field.name] && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors[field.name]}
-                    </p>
-                  )}
-                </div>
-              ))}
+                    {errors[field.name] && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors[field.name]}
+                      </p>
+                    )}
+                  </div>
+                ))}
+
+              {/* ✅ Phone + Email side by side */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                {fields
+                  ?.filter(
+                    (f) =>
+                      f.name.toLowerCase().includes("phone") ||
+                      f.name.toLowerCase().includes("email")
+                  )
+                  .map((field, index) => (
+                    <div key={`${field.id}-${index}`}>
+                      <input
+                        type={field.type === "phone" ? "tel" : "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        className="w-full p-3 border-none rounded-[10px] bg-white"
+                        value={formData[field.name] || ""}
+                        onChange={handleChange}
+                        inputMode={
+                          field.type === "phone" ? "numeric" : undefined
+                        }
+                        pattern={field.type === "phone" ? "[0-9]*" : undefined}
+                      />
+                      {errors[field.name] && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors[field.name]}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+              </div>
+
+              {/* ✅ Message textarea always last */}
+              {fields
+                ?.filter((f) => f.type === "textarea")
+                .map((field, index) => (
+                  <div key={`${field.id}-${index}`} className="mb-4">
+                    <textarea
+                      name={field.name}
+                      placeholder={field.label}
+                      className="w-full p-2 border-none rounded-[10px] bg-white"
+                      rows={4}
+                      value={formData[field.name] || ""}
+                      onChange={handleChange}
+                    />
+                    {errors[field.name] && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors[field.name]}
+                      </p>
+                    )}
+                  </div>
+                ))}
 
               <button
                 type="button"
