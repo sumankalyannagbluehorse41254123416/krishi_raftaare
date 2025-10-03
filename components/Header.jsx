@@ -55,7 +55,7 @@ export default function Header() {
           </div>
           <button
             onClick={toggleMenu}
-            className="text-green-600 focus:outline-none"
+            className="text-[var(--light-green)]  focus:outline-none"
           >
             <FaBars className="text-2xl" />
           </button>
@@ -76,7 +76,7 @@ export default function Header() {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="p-4 bg-green-600 text-white flex justify-between items-center">
+        <div className="p-4 bg-[var(--light-green)]  text-white flex justify-between items-center">
           <div className="flex items-center">
             <img src="image/logo.jpg" alt="Logo" className="h-auto w-10" />
           </div>
@@ -89,9 +89,9 @@ export default function Header() {
             <a
               key={label}
               href={link}
-              className="px-6 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition flex items-center"
+              className="px-6 py-3 text-[var(--deepest-green)]  hover:bg-green-50 hover:text-green-600 transition flex items-center"
             >
-              <Icon className="mr-3 text-green-500" /> {label}
+              <Icon className="mr-3 text-[var(--light-green)] " /> {label}
             </a>
           ))}
         </nav>
