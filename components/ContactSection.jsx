@@ -10,7 +10,7 @@ export default function ContactSection({ data, fields }) {
 
   if (!data) return null;
 
-  // init formData when fields load
+  // Initialize formData when fields load
   useEffect(() => {
     if (fields && fields.length > 0) {
       const initial = {};
@@ -26,7 +26,7 @@ export default function ContactSection({ data, fields }) {
 
     // ✅ Phone number: only digits, max 10 chars
     if (name.toLowerCase().includes("phone")) {
-      const digitsOnly = value.replace(/\D/g, "");
+      const digitsOnly = value.replace(/\D/g, ""); // remove non-digits
       if (digitsOnly.length <= 10) {
         setFormData((prev) => ({ ...prev, [name]: digitsOnly }));
       }
@@ -56,10 +56,10 @@ export default function ContactSection({ data, fields }) {
       }
 
       // ✅ Phone validation: exactly 10 digits
-      if (field.type === "phone") {
+      if (field.name.toLowerCase().includes("phone")) {
         if (!value || value.length !== 10) {
           newErrors[field.name] = "Phone number must be exactly 10 digits";
-          phoneInvalid = true; // ✅ set flag to trigger alert
+          phoneInvalid = true;
         }
       }
     });
@@ -76,9 +76,7 @@ export default function ContactSection({ data, fields }) {
 
     try {
       setLoading(true);
-
       const response = await handleSubmitForm(window.location.host, formData);
-
       if (response) {
         alert("Form submitted successfully!");
         const reset = {};
@@ -189,7 +187,7 @@ export default function ContactSection({ data, fields }) {
                   </div>
                 ))}
 
-              {/* ✅ Phone + Email side by side */}
+              {/* Phone + Email side by side */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {fields
                   ?.filter(
@@ -220,7 +218,7 @@ export default function ContactSection({ data, fields }) {
                   ))}
               </div>
 
-              {/* ✅ Message textarea always last */}
+              {/* Message textarea always last */}
               {fields
                 ?.filter((f) => f.type === "textarea")
                 .map((field, index) => (
