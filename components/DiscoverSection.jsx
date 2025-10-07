@@ -30,3 +30,5 @@ export default function HighlightSection({ sectionData }) {
     </div>
   );
 }
+
+
