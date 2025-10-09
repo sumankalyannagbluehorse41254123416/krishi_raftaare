@@ -21,6 +21,15 @@ export default function ContactSection({ data, fields }) {
     }
   }, [fields]);
 
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      const timer = setTimeout(() => {
+        setErrors({});
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errors]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
