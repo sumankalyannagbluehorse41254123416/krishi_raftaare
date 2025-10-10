@@ -47,7 +47,7 @@ export default function ProductsSection({ sectionData }) {
                       key={index}
                       className="flex items-center justify-center md:justify-start product_sub_content"
                     >
-                      <span className=" px-3 py-2 bg-[var(--deepest-green)] rounded-full flex items-center justify-center mr-4">
+                      <span className=" px-4 md:px-3 py-2.5 md:py-2 bg-[var(--deepest-green)] rounded-full flex items-center justify-center mr-4">
                         <img
                           src="/image/wheat_iconn.svg"
                           alt=""

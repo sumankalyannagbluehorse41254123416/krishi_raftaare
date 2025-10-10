@@ -164,6 +164,26 @@ h6 {
   animation: slideUpDown 7s ease-in-out infinite;
 }
 
+@media (max-width:768px){
+  .agricultural_img:before{
+    left: 225px;
+  }
+
+  .agricultural_img:after{
+    left: 255px;
+  }
+}
+
+@media (max-width:640px){
+  .agricultural_img:before{
+    left: 205px;
+  }
+
+  .agricultural_img:after{
+    left: 235px;
+  }
+}
+
 /* Looking for Agriculture animation  */
 
 @keyframes slideUpDown {

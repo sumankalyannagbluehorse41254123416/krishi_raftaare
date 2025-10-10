@@ -149,7 +149,7 @@ export default function ContactSection({ data, fields }) {
                   <img
                     src={data.subsections[4].image}
                     alt="Agriculture"
-                    className="rounded-lg shadow-md h-28 lg:h-40 w-32 lg:w-40 object-cover"
+                    className="rounded-lg shadow-md h-28 sm:h-32 md:h-28 lg:h-40 w-42 sm:w-52 md:w-32 lg:w-40 object-cover"
                   />
                 )}
               </div>
@@ -157,14 +157,14 @@ export default function ContactSection({ data, fields }) {
                 <img
                   src={data.subsections[5].image}
                   alt="Organic Eco"
-                  className="rounded-lg shadow-md mt-4 w-[300px] absolute top-[40px] right-0"
+                  className="rounded-lg shadow-md mt-4 w-[380px] sm:w-[410px] md:w-[300px] absolute top-[40px] right-0"
                 />
               )}
             </div>
           </div>
 
           {/* Right Side Form */}
-          <div className="flex-1 bg-[#f5f5f5] p-10 rounded-lg shadow-md mt-28 lg:mt-0">
+          <div className="flex-1 bg-[#f5f5f5] p-10 rounded-lg shadow-md mt-37 lg:mt-0">
             <h3 className="text-xl font-semibold text-green-800 mb-6">
               Contact With Us
             </h3>
@@ -197,7 +197,7 @@ export default function ContactSection({ data, fields }) {
                 ))}
 
               {/* Phone + Email side by side */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 {fields
                   ?.filter(
                     (f) =>
